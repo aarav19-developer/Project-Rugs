@@ -1,0 +1,245 @@
+import { Link } from 'react-router-dom'
+import MarqueeStrip from '../Components/MarqueeStrip'
+
+/* Quick-preview cards shown on the Home page */
+const PREVIEWS = [
+  {
+    to: '/about',
+    icon: 'fa-solid fa-store',
+    title: 'Our Story',
+    desc: '30+ years of handcraft legacy rooted in Meerut, UP — the heartland of India\'s carpet industry.',
+    color: '#5C6B3A',
+  },
+  {
+    to: '/products',
+    icon: 'fa-solid fa-grip',
+    title: 'Our Products',
+    desc: 'Carpets, Poufs, Cushions, Wall Art, Wall Hangings, Stools & Benches — all 100% handmade.',
+    color: '#A07850',
+  },
+  {
+    to: '/process',
+    icon: 'fa-solid fa-hands',
+    title: 'How We Make It',
+    desc: 'From raw fibre selection to final export packaging — 6 stages of precision craftsmanship.',
+    color: '#6B4F2E',
+  },
+  {
+    to: '/why-us',
+    icon: 'fa-solid fa-certificate',
+    title: 'Why Partner With Us',
+    desc: 'Export quality, custom sizing, eco-friendly materials and competitive factory pricing.',
+    color: '#3E4D28',
+  },
+  {
+    to: '/global-reach',
+    icon: 'fa-solid fa-earth-americas',
+    title: 'Global Reach',
+    desc: 'Delivering to USA, UK, Europe, UAE, Australia and 15+ more countries worldwide.',
+    color: '#7A6B55',
+  },
+  {
+    to: '/contact',
+    icon: 'fa-solid fa-paper-plane',
+    title: 'Get a Quote',
+    desc: 'Request samples, custom designs or FOB/CIF pricing. We respond within 24 hours.',
+    color: '#B8922A',
+  },
+]
+
+const HIGHLIGHTS = [
+  { num: '30+',   label: 'Years of Craftsmanship' },
+  { num: '500+',  label: 'Designs in Portfolio'   },
+  { num: '20+',   label: 'Countries Served'        },
+  { num: '100%',  label: 'Handmade Products'       },
+]
+
+export default function Home() {
+  return (
+    <>
+      {/* ── HERO ── */}
+      <section className="hero" id="home">
+        <div className="hero-bg">
+          {/* TODO: Replace src with your actual hero image */}
+          <img
+            src="https://placehold.co/1920x1080/3E4D28/D4C5A3?text=Handcrafted+Since+Generations"
+            alt="Deen Dayal Rugs Exports hero"
+          />
+          <div className="hero-overlay" />
+        </div>
+
+        <div className="hero-content">
+          <p className="hero-eyebrow">Est. in Meerut, India &nbsp;·&nbsp; Exporting Excellence Worldwide</p>
+          <h1 className="hero-title">
+            Deen Dayal<br />
+            <span>Rugs Exports</span>
+          </h1>
+          <p className="hero-tagline">Crafted by Hand, Loved Worldwide</p>
+          <p className="hero-desc">
+            Weaving generations of tradition into every knot — premium handmade carpets and
+            lifestyle products crafted by master artisans, delivered to the world's finest
+            homes and interiors.
+          </p>
+          <div className="hero-btns">
+            <Link to="/products" className="btn-primary">Explore Our Collection</Link>
+            <Link to="/contact"  className="btn-secondary">Enquire Now</Link>
+          </div>
+        </div>
+
+        <div className="hero-scroll-hint">
+          <span>Scroll to discover</span>
+          <i className="fa-solid fa-chevron-down" />
+        </div>
+      </section>
+
+      {/* ── MARQUEE ── */}
+      <MarqueeStrip />
+
+      {/* ── HIGHLIGHTS BAR ── */}
+      <section className="home-highlights">
+        <div className="container">
+          <div className="highlights-grid">
+            {HIGHLIGHTS.map((h) => (
+              <div className="highlight-item reveal-up" key={h.label}>
+                <span className="highlight-num">{h.num}</span>
+                <span className="highlight-label">{h.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── INTRO ── */}
+      <section className="home-intro section-pad">
+        <div className="container">
+          <div className="home-intro-grid">
+            <div className="home-intro-text reveal-left">
+              <p className="section-eyebrow">Welcome to Deen Dayal Rugs Exports</p>
+              <h2 className="section-title">
+                A Legacy Woven<br /><em>Thread by Thread</em>
+              </h2>
+              <p>
+                Born in the carpet weaving heartland of <strong>Meerut, Uttar Pradesh</strong>,
+                we are a family-rooted export house that has grown from a small artisan workshop
+                into a globally trusted name in handmade textile exports.
+              </p>
+              <p>
+                Every product that leaves our factory — from intricately knotted carpets to
+                hand-crafted furniture — carries the soul of generations of master craftsmen
+                and the precision demanded by international buyers.
+              </p>
+              <div className="home-intro-actions">
+                <Link to="/about"   className="btn-primary">Our Full Story</Link>
+                <Link to="/contact" className="btn-outline">Request a Sample</Link>
+              </div>
+            </div>
+            <div className="home-intro-img reveal-right">
+              {/* TODO: Replace with actual artisan/workshop photo */}
+              <div className="home-img-placeholder">
+                <i className="fa-solid fa-hands" />
+                <span>Artisan at work — add your photo here</span>
+              </div>
+              <div className="home-intro-badge">
+                <span className="badge-num">30<sup>+</sup></span>
+                <span className="badge-text">Years of<br />Craftsmanship</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── PAGE PREVIEW CARDS ── */}
+      <section className="home-previews section-pad bg-sand">
+        <div className="container">
+          <div className="section-header reveal-up">
+            <p className="section-eyebrow">Everything We Offer</p>
+            <h2 className="section-title">
+              Explore Deen Dayal<br /><em>Rugs Exports</em>
+            </h2>
+            <p className="section-desc">
+              Navigate through our pages to discover the full story, product range,
+              craftsmanship process, and global footprint.
+            </p>
+          </div>
+
+          <div className="preview-grid">
+            {PREVIEWS.map((p, i) => (
+              <Link
+                to={p.to}
+                className="preview-card reveal-up"
+                key={p.to}
+                style={{ transitionDelay: `${(i % 3) * 0.1}s` }}
+              >
+                <div className="preview-icon" style={{ background: p.color }}>
+                  <i className={p.icon} />
+                </div>
+                <h3>{p.title}</h3>
+                <p>{p.desc}</p>
+                <span className="preview-cta">
+                  Explore <i className="fa-solid fa-arrow-right" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRODUCT TEASER ── */}
+      <section className="home-product-teaser section-pad">
+        <div className="container">
+          <div className="section-header reveal-up">
+            <p className="section-eyebrow">Our Product Range</p>
+            <h2 className="section-title">
+              7 Categories of<br /><em>Handmade Excellence</em>
+            </h2>
+          </div>
+          <div className="teaser-grid">
+            {[
+              { name: 'Carpets',        bg: '#A89070', icon: 'fa-solid fa-grip'        },
+              { name: 'Poufs',          bg: '#8B7355', icon: 'fa-solid fa-circle'       },
+              { name: 'Cushions',       bg: '#C4A882', icon: 'fa-solid fa-square'       },
+              { name: 'Wall Art',       bg: '#7A6B55', icon: 'fa-solid fa-image'        },
+              { name: 'Wall Hangings',  bg: '#B8A898', icon: 'fa-solid fa-panorama'     },
+              { name: 'Wooden Stools',  bg: '#6B5A3E', icon: 'fa-solid fa-chair'        },
+              { name: 'Benches',        bg: '#6B7C4A', icon: 'fa-solid fa-couch'        },
+            ].map((p, i) => (
+              <Link
+                to="/products"
+                key={p.name}
+                className="teaser-card reveal-up"
+                style={{ transitionDelay: `${(i % 4) * 0.08}s` }}
+              >
+                <div className="teaser-img" style={{ background: p.bg }}>
+                  <i className={p.icon} />
+                  {/* TODO: Replace with actual product image */}
+                </div>
+                <span>{p.name}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="teaser-cta reveal-up">
+            <Link to="/products" className="btn-primary">View All Products</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA BANNER ── */}
+      <section className="home-cta">
+        <div className="container">
+          <div className="home-cta-inner reveal-up">
+            <div className="home-cta-text">
+              <h2>Ready to Source Premium Handmade Products?</h2>
+              <p>Talk to our export team — free samples, custom designs, and competitive pricing available.</p>
+            </div>
+            <div className="home-cta-btns">
+              <Link to="/contact" className="btn-primary">Get a Quote</Link>
+              <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="btn-wa">
+                <i className="fa-brands fa-whatsapp" /> WhatsApp Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  )
+}

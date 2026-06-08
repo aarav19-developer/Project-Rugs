@@ -1,0 +1,24 @@
+.marquee-strip {
+  background: var(--olive);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  gap: 2rem;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marquee-track span {
+  font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--olive-pale);
+}
+
+.marquee-track .dot {
+  color: var(--sand-dark);
+  letter-spacing: 0;
+  margin-left: 2rem;
+}

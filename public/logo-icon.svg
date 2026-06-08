@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" fill="none">
+  <!-- TOP: Rolled carpet standing upright -->
+  <!-- Left vertical stem -->
+  <line x1="38" y1="58" x2="38" y2="118" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+  <!-- Arch / roll at top -->
+  <path d="M38 58 Q38 22 72 22 Q106 22 106 58" stroke="currentColor" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <!-- Right side of upper carpet body -->
+  <path d="M106 58 L106 118" stroke="currentColor" stroke-width="8" stroke-linecap="round"/>
+  <!-- Bottom edge of top carpet -->
+  <path d="M38 118 Q38 132 52 132 L160 132 Q172 132 172 120 L172 62 Q172 50 160 50 L106 50"
+        stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Inner curve detail on upper carpet -->
+  <path d="M106 74 Q120 68 134 74" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Inner horizontal lines (carpet weave layers) -->
+  <line x1="106" y1="92" x2="166" y2="92" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+  <line x1="106" y1="110" x2="166" y2="110" stroke="currentColor" stroke-width="5" stroke-linecap="round"/>
+  <!-- Fringe right of upper carpet -->
+  <line x1="172" y1="68" x2="190" y2="68" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+  <line x1="172" y1="84" x2="194" y2="84" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+  <line x1="172" y1="100" x2="190" y2="100" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+  <line x1="172" y1="116" x2="186" y2="116" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- BOTTOM: Carpet laid flat / rolled on floor -->
+  <!-- Main body of lower carpet -->
+  <path d="M30 155 Q30 143 44 143 L176 143 Q190 143 190 155 Q190 170 176 174 L44 174 Q30 170 30 155 Z"
+        stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Roll circle on left -->
+  <circle cx="52" cy="159" r="12" stroke="currentColor" stroke-width="6" fill="none"/>
+  <!-- Small inner circle of roll -->
+  <circle cx="52" cy="159" r="4" stroke="currentColor" stroke-width="4" fill="none"/>
+  <!-- Inner curve detail on lower carpet -->
+  <path d="M76 159 Q98 150 120 159" stroke="currentColor" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Bottom fringe right -->
+  <line x1="190" y1="150" x2="206" y2="150" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+  <line x1="190" y1="161" x2="210" y2="161" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+  <line x1="190" y1="170" x2="206" y2="170" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
+</svg>
