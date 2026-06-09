@@ -16,10 +16,33 @@ const WhyUs       = lazy(() => import('./pages/WhyUs'))
 const GlobalReach = lazy(() => import('./pages/GlobalReach'))
 const Contact     = lazy(() => import('./pages/Contact'))
 
-// Scroll to top on every route change
+// Scroll to top on route change — but respect hash anchors (#section)
 function ScrollToTop() {
-  const { pathname } = useLocation()
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (hash) {
+      // Has a hash — scroll to that element after the page renders
+      // Use a retry loop since lazy-loaded pages take time to mount
+      const scrollToHash = (attempts = 0) => {
+        const el = document.querySelector(hash)
+        if (el) {
+          // Offset for fixed navbar (~80px)
+          const top = el.getBoundingClientRect().top + window.scrollY - 88
+          window.scrollTo({ top, behavior: 'smooth' })
+        } else if (attempts < 10) {
+          // Element not in DOM yet — retry after 100ms
+          setTimeout(() => scrollToHash(attempts + 1), 100)
+        }
+      }
+      // Small initial delay to let the lazy page start rendering
+      setTimeout(() => scrollToHash(), 80)
+    } else {
+      // No hash — scroll to top
+      window.scrollTo(0, 0)
+    }
+  }, [pathname, hash])
+
   return null
 }
 
