@@ -48,6 +48,9 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  /* Prevent horizontal overflow globally */
+  overflow-x: hidden;
+  width: 100%;
 }
 
 body {
@@ -56,6 +59,14 @@ body {
   color: var(--text-dark);
   line-height: 1.7;
   overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+/* Prevent any child from breaking layout width */
+#root {
+  overflow-x: hidden;
+  width: 100%;
 }
 
 img {
@@ -445,12 +456,27 @@ button {
 .hero-eyebrow {
   font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--sand-dark);
   margin-bottom: 20px;
   opacity: 0;
   animation: fadeUp 0.8s ease 0.3s forwards;
+  /* Allow wrapping — never clip */
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  padding: 0 1rem;
+  line-height: 1.6;
+}
+
+/* Show/hide variants */
+.eyebrow-desktop { display: inline; }
+.eyebrow-mobile  { display: none;   }
+
+@media (max-width: 480px) {
+  .eyebrow-desktop { display: none;   }
+  .eyebrow-mobile  { display: inline; }
 }
 
 .hero-title {
@@ -598,8 +624,9 @@ button {
   }
 
   .hero-eyebrow {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    padding: 0 0.75rem;
   }
 }
 
@@ -1821,10 +1848,23 @@ button {
 ============================================================ */
 .page-hero {
   position: relative;
-  padding: 160px 0 100px;
+  /* Enough top padding to clear fixed navbar (navbar ~72px tall) */
+  padding: 140px 0 80px;
   background: var(--page-hero-bg, var(--olive-dark));
   overflow: hidden;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 110px 0 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 100px 0 48px;
+  }
 }
 
 .page-hero::before {
@@ -2910,4 +2950,420 @@ button {
   .teaser-grid  { grid-template-columns: repeat(2, 1fr); }
   .cert-grid    { grid-template-columns: 1fr; }
   .team-grid    { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   GLOBAL MOBILE OVERFLOW & RESPONSIVENESS FIXES
+============================================================ */
+
+/* Hard stop for any element wider than viewport */
+img, video, iframe, table {
+  max-width: 100%;
+}
+
+/* Prevent wide text from overflowing */
+.hero-title,
+.hero-tagline,
+.hero-desc {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* ── MAIN CONTENT — always below fixed navbar ── */
+main {
+  padding-top: 0; /* hero pages handle their own offset */
+}
+
+/* Inner pages — push below navbar */
+.page-hero + * {
+  /* nothing extra needed — page-hero handles the navbar offset */
+}
+
+/* All sections — no horizontal overflow */
+section {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* ── CONTAINER — safe on all widths ── */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container { padding: 0 1.5rem; }
+}
+
+@media (min-width: 1024px) {
+  .container { padding: 0 2rem; }
+}
+
+/* ── NAVBAR MOBILE ── */
+@media (max-width: 768px) {
+  .nav-container {
+    padding: 0 1.25rem;
+  }
+
+  .nav-logo {
+    gap: 8px;
+  }
+
+  .logo-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .logo-main {
+    font-size: 1.15rem;
+  }
+
+  .logo-sub {
+    font-size: 0.55rem;
+  }
+}
+
+/* ── HERO MOBILE ── */
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 90px 1.25rem 60px;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    padding: 0 0.5rem;
+  }
+
+  .hero-desc {
+    padding: 0 0.25rem;
+  }
+}
+
+/* ── SECTION PADDING MOBILE ── */
+@media (max-width: 768px) {
+  .section-pad {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+}
+
+/* ── ABOUT PAGE MOBILE ── */
+@media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-badge {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .about-animation-placeholder {
+    height: 280px;
+  }
+
+  .about-stats {
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+}
+
+/* ── PRODUCTS PAGE MOBILE ── */
+@media (max-width: 768px) {
+  .product-page-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    direction: ltr !important;
+  }
+
+  .product-page-img {
+    height: 260px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── PROCESS PAGE MOBILE ── */
+@media (max-width: 768px) {
+  .process-page-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    direction: ltr !important;
+  }
+
+  .process-page-icon-block {
+    height: 200px;
+  }
+
+  .process-timeline {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ── WHY US MOBILE ── */
+@media (max-width: 768px) {
+  .why-grid-extended {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .facts-counters {
+    grid-template-columns: 1fr 1fr;
+    padding: 28px 20px;
+    gap: 16px;
+    border-radius: var(--radius-lg);
+  }
+
+  .fact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── HOME PAGE MOBILE ── */
+@media (max-width: 768px) {
+  .highlights-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .highlight-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+    padding: 16px;
+  }
+
+  .highlight-item:nth-child(odd) {
+    border-right: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .home-intro-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .home-img-placeholder {
+    height: 280px;
+  }
+
+  .home-intro-badge {
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .home-intro-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home-intro-actions a {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .teaser-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .teaser-img {
+    height: 130px;
+    font-size: 1.6rem;
+  }
+
+  .home-cta-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+  }
+
+  .home-cta-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .home-cta-btns a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── GLOBAL REACH MOBILE ── */
+@media (max-width: 768px) {
+  .country-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .shipping-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .world-map-wrapper {
+    padding: 10px 10px 0;
+  }
+}
+
+/* ── CONTACT PAGE MOBILE ── */
+@media (max-width: 768px) {
+  .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-wrapper {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .enquiry-form {
+    padding: 28px 20px;
+    border-radius: var(--radius-lg);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── FOOTER MOBILE ── */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-top {
+    padding: 60px 0 40px;
+  }
+
+  .footer-bottom .container {
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+  }
+}
+
+/* ── CARDS & GRIDS — small phone ── */
+@media (max-width: 480px) {
+  .why-grid-extended {
+    grid-template-columns: 1fr;
+  }
+
+  .teaser-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .country-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .page-cta-inner {
+    padding: 32px 20px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline {
+    padding: 12px 20px;
+    font-size: 0.78rem;
+  }
+}
+
+/* ── TIMELINE MOBILE ── */
+@media (max-width: 768px) {
+  .timeline {
+    padding: 0 0.5rem;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--sand-dark);
+  }
+
+  .timeline-item::before { display: none; }
+
+  .timeline-item.left .timeline-year,
+  .timeline-item.right .timeline-year {
+    order: 1;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    order: 2;
+    text-align: left;
+  }
+}
+
+/* ── PROCESS STEPS ── */
+@media (max-width: 768px) {
+  .process-step {
+    text-align: left;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 0 16px;
+    align-items: start;
+  }
+
+  .step-number {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .step-icon {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 8px 0 0;
+    width: 52px;
+    height: 52px;
+  }
+
+  .step-content {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    text-align: left;
+  }
+
+  .step-content h3 {
+    font-size: 1rem;
+  }
 }

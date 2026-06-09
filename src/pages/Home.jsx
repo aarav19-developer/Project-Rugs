@@ -71,7 +71,10 @@ export default function Home() {
         </div>
 
         <div className="hero-content">
-          <p className="hero-eyebrow">Est. in Meerut, India &nbsp;·&nbsp; Exporting Excellence Worldwide</p>
+          <p className="hero-eyebrow">
+            <span className="eyebrow-desktop">Est. in Meerut, India &nbsp;·&nbsp; Exporting Excellence Worldwide</span>
+            <span className="eyebrow-mobile">Est. in Meerut, India · Exporting Worldwide</span>
+          </p>
           <h1 className="hero-title">
             Deen Dayal<br />
             <span>Rugs Exports</span>
