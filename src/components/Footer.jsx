@@ -3,10 +3,10 @@ import '../style/Footer.css'
 
 // TODO: Replace each href with your actual social media profile URL
 const SOCIALS = [
-  { icon: 'fa-brands fa-instagram',  href: 'https://instagram.com', label: 'Instagram' },
-  { icon: 'fa-brands fa-facebook-f', href: 'https://facebook.com',  label: 'Facebook'  },
-  { icon: 'fa-brands fa-linkedin-in',href: 'https://linkedin.com',  label: 'LinkedIn'  },
-  { icon: 'fa-brands fa-youtube',    href: 'https://youtube.com',   label: 'YouTube'   },
+  { icon: 'fa-brands fa-instagram',  href: 'https://www.instagram.com/deendayalrugs',          label: 'Follow Deen Dayal Rugs Exports on Instagram' },
+  { icon: 'fa-brands fa-facebook-f', href: 'https://www.facebook.com/deendayalrugs',            label: 'Follow Deen Dayal Rugs Exports on Facebook'  },
+  { icon: 'fa-brands fa-linkedin-in', href: 'https://www.linkedin.com/company/deen-dayal-rugs-exports', label: 'Connect on LinkedIn' },
+  { icon: 'fa-brands fa-youtube',    href: 'https://www.youtube.com/@deendayalrugs',             label: 'Watch on YouTube' },
 ]
 
 const QUICK_LINKS = [
@@ -49,8 +49,8 @@ export default function Footer() {
               <p>Preserving the art of Indian handmade crafts — crafted with soul, exported with pride from Meerut, India.</p>
               <div className="footer-socials">
                 {SOCIALS.map((s) => (
-                  <a key={s.label} href={s.href} target="_blank" rel="noreferrer" aria-label={s.label}>
-                    <i className={s.icon} />
+                  <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
+                    <i className={s.icon} aria-hidden="true" />
                   </a>
                 ))}
               </div>
@@ -93,8 +93,8 @@ export default function Footer() {
                   <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
                 </li>
                 <li>
-                  <i className="fa-brands fa-whatsapp" />
-                  <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noreferrer">
+                  <i className="fa-brands fa-whatsapp" aria-hidden="true" />
+                  <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with Deen Dayal Rugs Exports on WhatsApp">
                     Chat on WhatsApp
                   </a>
                 </li>

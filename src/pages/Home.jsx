@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import MarqueeStrip from '../Components/MarqueeStrip'
+import PageMeta from '../Components/PageMeta'
 
 /* Quick-preview cards shown on the Home page */
 const PREVIEWS = [
@@ -57,6 +58,11 @@ const HIGHLIGHTS = [
 export default function Home() {
   return (
     <>
+      <PageMeta
+        title="Handmade Rugs &amp; Carpet Exporter from Meerut India | Deen Dayal Rugs Exports"
+        description="Premium handmade carpets, rugs, poufs and home textiles crafted by master artisans in Meerut, India. Trusted exporter to 20+ countries worldwide. Request a free sample."
+        canonical="https://www.deendayalrugs.com/"
+      />
       {/* ── HERO ── */}
       <section className="hero" id="home">
         <div className="hero-bg">

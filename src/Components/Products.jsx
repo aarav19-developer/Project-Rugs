@@ -88,7 +88,13 @@ export default function Products() {
             >
               <div className="product-img">
                 {/* TODO: Replace p.image with actual product photo once available */}
-                <img src={p.image} alt={p.title} />
+                <img
+                  src={p.image}
+                  alt={`${p.title} — handmade ${p.title.toLowerCase()} exported from Meerut, India`}
+                  loading="lazy"
+                  width="480"
+                  height="560"
+                />
                 {p.badge && <span className="product-badge">{p.badge}</span>}
                 <div className="product-overlay">
                   <a href="#enquiry" className="btn-enquire">Enquire About This</a>

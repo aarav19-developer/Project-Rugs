@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react'
 import PageHero from '../Components/PageHero'
+import PageMeta from '../Components/PageMeta'
 
 const PRODUCT_OPTIONS = [
   { value: 'carpets',      label: 'Carpets (Customised Available)' },
@@ -34,11 +35,13 @@ export default function Contact() {
   const [errors,  setErrors]  = useState({})
   const [success, setSuccess] = useState(false)
   const [sending, setSending] = useState(false)
+  const [sendErr, setSendErr] = useState(false)
 
   const validate = () => {
     const e = {}
     if (!form.fullName.trim())   e.fullName       = true
     if (!form.email.trim())      e.email          = true
+    if (!/\S+@\S+\.\S+/.test(form.email)) e.email = true
     if (!form.phone.trim())      e.phone          = true
     if (!form.country.trim())    e.country        = true
     if (!form.productInterest)   e.productInterest = true
@@ -48,6 +51,7 @@ export default function Contact() {
   const change = (f) => (ev) => {
     setForm((p) => ({ ...p, [f]: ev.target.value }))
     setErrors((p) => ({ ...p, [f]: false }))
+    setSendErr(false)
   }
 
   const handleSubmit = async (ev) => {
@@ -55,24 +59,45 @@ export default function Contact() {
     const e = validate()
     if (Object.keys(e).length) { setErrors(e); return }
     setSending(true)
+    setSendErr(false)
 
-    /*
-      ── TODO: Activate real email sending ──
-      1. npm install @emailjs/browser
-      2. import emailjs from '@emailjs/browser'
-      3. Replace the fake delay below with:
-         await emailjs.send('SERVICE_ID', 'TEMPLATE_ID', { ...form }, 'PUBLIC_KEY')
-    */
-    await new Promise((r) => setTimeout(r, 1000))
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TODO: Replace with your Web3Forms key from web3forms.com
+          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Exports`,
+          from_name: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          country: form.country,
+          product_interest: form.productInterest,
+          message: form.message || 'No message provided.',
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSuccess(true)
+        setForm(INITIAL)
+        setTimeout(() => setSuccess(false), 6000)
+      } else {
+        setSendErr(true)
+      }
+    } catch {
+      setSendErr(true)
+    }
 
     setSending(false)
-    setSuccess(true)
-    setForm(INITIAL)
-    setTimeout(() => setSuccess(false), 6000)
   }
 
   return (
     <>
+      <PageMeta
+        title="Contact Us — Request a Quote or Sample | Deen Dayal Rugs Exports"
+        description="Send an enquiry to Deen Dayal Rugs Exports in Meerut, India. Request product samples, custom carpet pricing, FOB/CIF quotes. We respond within 24 hours."
+        canonical="https://www.deendayalrugs.com/contact"
+      />
       <PageHero
         eyebrow="Get in Touch"
         title="Request a Quote or Sample"
@@ -176,6 +201,13 @@ export default function Contact() {
                   <p>Thank you! Your enquiry has been received. We'll be in touch within 24 hours.</p>
                 </div>
               )}
+
+              {sendErr && (
+                <div className="form-success show" style={{ background: 'rgba(192,57,43,0.08)', borderColor: '#c0392b' }}>
+                  <i className="fa-solid fa-circle-exclamation" style={{ color: '#c0392b' }} />
+                  <p style={{ color: '#c0392b' }}>Something went wrong. Please try again or contact us directly on WhatsApp.</p>
+                </div>
+              )}
             </form>
           </div>
         </div>
@@ -205,19 +237,26 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* ── MAP EMBED PLACEHOLDER ── */}
+      {/* ── GOOGLE MAP ── */}
       <section className="section-pad">
         <div className="container">
-          <div className="map-embed-placeholder reveal-up">
-            <i className="fa-solid fa-map-location-dot" />
-            <p>Google Maps embed — Meerut, Uttar Pradesh, India</p>
-            {/*
-              TODO: Replace this div with a real Google Maps embed:
-              <iframe
-                src="https://maps.google.com/maps?q=Meerut,UP,India&output=embed"
-                width="100%" height="400" style={{border:0}} allowFullScreen loading="lazy"
-              />
-            */}
+          <div className="section-header reveal-up">
+            <p className="section-eyebrow">Find Us</p>
+            <h2 className="section-title">Our <em>Location</em></h2>
+            <p className="section-desc">Located in the industrial heartland of Meerut, Uttar Pradesh — the carpet weaving capital of India.</p>
+          </div>
+          <div className="map-embed-wrapper reveal-up">
+            <iframe
+              title="Deen Dayal Rugs Exports — Meerut, Uttar Pradesh, India"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.84156551504!2d77.5546!3d28.9845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65a3c3c1abf3%3A0x9b2e8e9e7c3b7c3a!2sMeerut%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              aria-label="Google Map showing Meerut, Uttar Pradesh, India — location of Deen Dayal Rugs Exports"
+            />
           </div>
         </div>
       </section>

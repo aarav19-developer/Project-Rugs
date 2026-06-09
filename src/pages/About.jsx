@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
+import PageMeta from '../Components/PageMeta'
 
 const STATS = [
   { num: '30+',  label: 'Years in Business'     },
@@ -32,6 +33,11 @@ const VALUES = [
 export default function About() {
   return (
     <>
+      <PageMeta
+        title="About Us — Handmade Carpet Exporter from Meerut India | Deen Dayal Rugs Exports"
+        description="30+ years of handmade carpet craftsmanship. Deen Dayal Rugs Exports — a family-rooted exporter from Meerut, UP, India. Serving buyers in 20+ countries worldwide."
+        canonical="https://www.deendayalrugs.com/about"
+      />
       <PageHero
         eyebrow="Our Story"
         title="A Legacy Woven Thread by Thread"

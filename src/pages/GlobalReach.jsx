@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
+import PageMeta from '../Components/PageMeta'
 import {
   ComposableMap, Geographies, Geography, Marker,
 } from 'react-simple-maps'
@@ -33,6 +34,11 @@ const SHIPPING_INFO = [
 export default function GlobalReach() {
   return (
     <>
+      <PageMeta
+        title="Global Carpet Export Destinations — Deen Dayal Rugs Exports India"
+        description="Exporting handmade carpets and rugs from Meerut, India to USA, UK, Germany, UAE, Australia and 20+ countries. Full export documentation and worldwide shipping."
+        canonical="https://www.deendayalrugs.com/global-reach"
+      />
       <PageHero
         eyebrow="Our Global Footprint"
         title="Woven in Meerut, Loved Worldwide"

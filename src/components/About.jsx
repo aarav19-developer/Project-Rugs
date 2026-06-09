@@ -42,7 +42,13 @@ export default function About() {
                 </div>
               ) : (
                 /* TODO: Replace src with actual artisan image */
-                <img src={ARTISAN_IMAGE} alt="Artisans crafting carpets" />
+                <img
+                  src={ARTISAN_IMAGE}
+                  alt="Skilled artisan hand-knotting a carpet at Deen Dayal Rugs Exports workshop in Meerut, India"
+                  loading="lazy"
+                  width="600"
+                  height="720"
+                />
               )}
             </div>
 

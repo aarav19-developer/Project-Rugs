@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
+import PageMeta from '../Components/PageMeta'
 
 const PRODUCTS = [
   {
@@ -112,6 +113,11 @@ const PRODUCTS = [
 export default function Products() {
   return (
     <>
+      <PageMeta
+        title="Handmade Carpets, Rugs & Home Textiles | Deen Dayal Rugs Exports India"
+        description="Explore our range — hand-knotted carpets, hand-tufted rugs, poufs, cushions, wall art, wall hangings, wooden stools and benches. 100% handmade in Meerut, India."
+        canonical="https://www.deendayalrugs.com/products"
+      />
       <PageHero
         eyebrow="Our Collection"
         title="Every Piece, A Masterpiece"

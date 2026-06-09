@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
+import PageMeta from '../Components/PageMeta'
 
 const STEPS = [
   {
@@ -62,6 +63,11 @@ const CERTIFICATIONS = [
 export default function Process() {
   return (
     <>
+      <PageMeta
+        title="How We Make Handmade Carpets — Manufacturing Process | Deen Dayal Rugs Exports"
+        description="From raw material selection to export packaging — 6 stages of precision handcraft. Eco-friendly dyes, hand-knotted weaving, quality inspection and worldwide shipping."
+        canonical="https://www.deendayalrugs.com/process"
+      />
       <PageHero
         eyebrow="How We Make It"
         title="From Raw Fibre to Your Floor"

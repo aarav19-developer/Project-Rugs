@@ -53,7 +53,7 @@ export default function Navbar() {
 
         {/* Logo — icon + company name */}
         <Link to="/" className="nav-logo" onClick={close}>
-          <img src="/logo-icon.svg" alt="" className="logo-icon" aria-hidden="true" />
+          <img src="/logo-icon.svg" alt="Deen Dayal Rugs Exports logo" className="logo-icon" width="44" height="44" />
           <div className="logo-text-wrap">
             <span className="logo-main">Deen Dayal</span>
             <span className="logo-sub">Rugs Exports</span>

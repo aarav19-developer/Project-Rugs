@@ -4,10 +4,10 @@ export default function FloatingWhatsApp() {
       href="https://wa.me/919999999999"
       className="float-whatsapp"
       target="_blank"
-      rel="noreferrer"
-      aria-label="Chat on WhatsApp"
+      rel="noopener noreferrer"
+      aria-label="Chat with Deen Dayal Rugs Exports on WhatsApp"
     >
-      <i className="fa-brands fa-whatsapp" />
+      <i className="fa-brands fa-whatsapp" aria-hidden="true" />
       <span className="wa-tooltip">Chat with us</span>
     </a>
   )

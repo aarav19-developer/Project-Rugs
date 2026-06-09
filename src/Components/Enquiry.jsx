@@ -1,23 +1,8 @@
 import { useState } from 'react'
 import '../style/Enquiry.css'
 
-/* ============================================================
-   DUMMY DATA — replace with real values when available
-   ============================================================ */
-// TODO: Replace with actual WhatsApp number (country code + number, no spaces/dashes)
-const WHATSAPP_NUMBER = '919999999999'
-
-// TODO: Replace with actual business email address
-const BUSINESS_EMAIL = 'info@deendayalrugs.com'
-
-// TODO: For actual form submission, integrate with:
-// Option A — EmailJS (free, no backend needed):
-//   npm install emailjs-com
-//   import emailjs from 'emailjs-com'
-//   emailjs.sendForm('SERVICE_ID', 'TEMPLATE_ID', form, 'USER_ID')
-// Option B — Formspree (just change action URL):
-//   <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-// Option C — Custom backend API endpoint
+const WHATSAPP_NUMBER = '919999999999' // TODO: Replace with real number
+const BUSINESS_EMAIL  = 'info@deendayalrugs.com' // TODO: Replace with real email
 
 const PRODUCT_OPTIONS = [
   { value: 'carpets',      label: 'Carpets (Customized Available)' },
@@ -47,20 +32,23 @@ export default function Enquiry() {
   const [errors,  setErrors]  = useState({})
   const [success, setSuccess] = useState(false)
   const [sending, setSending] = useState(false)
+  const [sendErr, setSendErr] = useState(false)
 
   const validate = () => {
     const e = {}
-    if (!form.fullName.trim())        e.fullName        = true
-    if (!form.email.trim())           e.email           = true
-    if (!form.phone.trim())           e.phone           = true
-    if (!form.country.trim())         e.country         = true
-    if (!form.productInterest)        e.productInterest = true
+    if (!form.fullName.trim())              e.fullName        = true
+    if (!form.email.trim())                 e.email           = true
+    if (!/\S+@\S+\.\S+/.test(form.email))  e.email           = true
+    if (!form.phone.trim())                 e.phone           = true
+    if (!form.country.trim())               e.country         = true
+    if (!form.productInterest)              e.productInterest = true
     return e
   }
 
   const handleChange = (field) => (ev) => {
     setForm((prev) => ({ ...prev, [field]: ev.target.value }))
     setErrors((prev) => ({ ...prev, [field]: false }))
+    setSendErr(false)
   }
 
   const handleSubmit = async (ev) => {
@@ -69,33 +57,36 @@ export default function Enquiry() {
     if (Object.keys(e).length) { setErrors(e); return }
 
     setSending(true)
+    setSendErr(false)
 
-    /* ──────────────────────────────────────────────────────
-       TODO: Replace the block below with real email sending.
-       Example using EmailJS:
-
-       import emailjs from 'emailjs-com'
-       await emailjs.send(
-         'YOUR_SERVICE_ID',    // from EmailJS dashboard
-         'YOUR_TEMPLATE_ID',   // from EmailJS dashboard
-         {
-           from_name:    form.fullName,
-           from_email:   form.email,
-           phone:        form.phone,
-           country:      form.country,
-           product:      form.productInterest,
-           message:      form.message,
-           to_email:     BUSINESS_EMAIL,
-         },
-         'YOUR_PUBLIC_KEY'     // from EmailJS dashboard
-       )
-    ────────────────────────────────────────────────────── */
-    await new Promise((r) => setTimeout(r, 1000)) // simulated delay — remove when real API added
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TODO: Replace — get free key at web3forms.com
+          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Exports`,
+          from_name: form.fullName,
+          email: form.email,
+          phone: form.phone,
+          country: form.country,
+          product_interest: form.productInterest,
+          message: form.message || 'No message provided.',
+        }),
+      })
+      const data = await res.json()
+      if (data.success) {
+        setSuccess(true)
+        setForm(INITIAL)
+        setTimeout(() => setSuccess(false), 5000)
+      } else {
+        setSendErr(true)
+      }
+    } catch {
+      setSendErr(true)
+    }
 
     setSending(false)
-    setSuccess(true)
-    setForm(INITIAL)
-    setTimeout(() => setSuccess(false), 5000)
   }
 
   return (
@@ -115,60 +106,63 @@ export default function Enquiry() {
 
             <ul className="enquiry-features">
               {FEATURES.map((f) => (
-                <li key={f}><i className="fa-solid fa-check" />{f}</li>
+                <li key={f}><i className="fa-solid fa-check" aria-hidden="true" />{f}</li>
               ))}
             </ul>
 
             <div className="enquiry-contact-quick">
-              {/* TODO: Replace WHATSAPP_NUMBER with real number */}
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" className="quick-wa">
-                <i className="fa-brands fa-whatsapp" /> Chat on WhatsApp
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="quick-wa" aria-label="Chat with Deen Dayal Rugs Exports on WhatsApp">
+                <i className="fa-brands fa-whatsapp" aria-hidden="true" /> Chat on WhatsApp
               </a>
-              {/* TODO: Replace BUSINESS_EMAIL with real email */}
-              <a href={`mailto:${BUSINESS_EMAIL}`} className="quick-mail">
-                <i className="fa-solid fa-envelope" /> {BUSINESS_EMAIL}
+              <a href={`mailto:${BUSINESS_EMAIL}`} className="quick-mail" aria-label="Email Deen Dayal Rugs Exports">
+                <i className="fa-solid fa-envelope" aria-hidden="true" /> {BUSINESS_EMAIL}
               </a>
             </div>
           </div>
 
           {/* ── RIGHT FORM ── */}
-          <form className="enquiry-form reveal-right" onSubmit={handleSubmit} noValidate>
+          <form className="enquiry-form reveal-right" onSubmit={handleSubmit} noValidate aria-label="Product enquiry form">
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="fullName">Full Name <span>*</span></label>
-                <input id="fullName" type="text" placeholder="Your full name"
+                <label htmlFor="eq-fullName">Full Name <span aria-hidden="true">*</span></label>
+                <input id="eq-fullName" type="text" placeholder="Your full name"
                   className={errors.fullName ? 'error' : ''}
-                  value={form.fullName} onChange={handleChange('fullName')} />
+                  value={form.fullName} onChange={handleChange('fullName')}
+                  autoComplete="name" aria-required="true" />
               </div>
               <div className="form-group">
-                <label htmlFor="email">Email Address <span>*</span></label>
-                <input id="email" type="email" placeholder="your@email.com"
+                <label htmlFor="eq-email">Email Address <span aria-hidden="true">*</span></label>
+                <input id="eq-email" type="email" placeholder="your@email.com"
                   className={errors.email ? 'error' : ''}
-                  value={form.email} onChange={handleChange('email')} />
+                  value={form.email} onChange={handleChange('email')}
+                  autoComplete="email" aria-required="true" />
               </div>
             </div>
 
             <div className="form-row">
               <div className="form-group">
-                <label htmlFor="phone">Phone / WhatsApp <span>*</span></label>
-                <input id="phone" type="tel" placeholder="+1 234 567 8900"
+                <label htmlFor="eq-phone">Phone / WhatsApp <span aria-hidden="true">*</span></label>
+                <input id="eq-phone" type="tel" placeholder="+1 234 567 8900"
                   className={errors.phone ? 'error' : ''}
-                  value={form.phone} onChange={handleChange('phone')} />
+                  value={form.phone} onChange={handleChange('phone')}
+                  autoComplete="tel" aria-required="true" />
               </div>
               <div className="form-group">
-                <label htmlFor="country">Country <span>*</span></label>
-                <input id="country" type="text" placeholder="Your country"
+                <label htmlFor="eq-country">Country <span aria-hidden="true">*</span></label>
+                <input id="eq-country" type="text" placeholder="Your country"
                   className={errors.country ? 'error' : ''}
-                  value={form.country} onChange={handleChange('country')} />
+                  value={form.country} onChange={handleChange('country')}
+                  autoComplete="country-name" aria-required="true" />
               </div>
             </div>
 
             <div className="form-group">
-              <label htmlFor="productInterest">Product Interest <span>*</span></label>
-              <select id="productInterest"
+              <label htmlFor="eq-productInterest">Product Interest <span aria-hidden="true">*</span></label>
+              <select id="eq-productInterest"
                 className={errors.productInterest ? 'error' : ''}
-                value={form.productInterest} onChange={handleChange('productInterest')}>
+                value={form.productInterest} onChange={handleChange('productInterest')}
+                aria-required="true">
                 <option value="" disabled>Select a product type</option>
                 {PRODUCT_OPTIONS.map((o) => (
                   <option key={o.value} value={o.value}>{o.label}</option>
@@ -177,23 +171,30 @@ export default function Enquiry() {
             </div>
 
             <div className="form-group">
-              <label htmlFor="message">Message / Requirements</label>
-              <textarea id="message" rows={5}
+              <label htmlFor="eq-message">Message / Requirements</label>
+              <textarea id="eq-message" rows={5}
                 placeholder="Tell us about your requirements — quantity, size, design preferences, delivery timeline, etc."
                 value={form.message} onChange={handleChange('message')} />
             </div>
 
             <button type="submit" className="btn-submit" disabled={sending}>
               <span>{sending ? 'Sending…' : 'Send Enquiry'}</span>
-              <i className="fa-solid fa-paper-plane" />
+              <i className="fa-solid fa-paper-plane" aria-hidden="true" />
             </button>
 
             <p className="form-note">We respond within 24 hours. Your information is kept strictly confidential.</p>
 
             {success && (
-              <div className="form-success show">
-                <i className="fa-solid fa-circle-check" />
+              <div className="form-success show" role="alert">
+                <i className="fa-solid fa-circle-check" aria-hidden="true" />
                 <p>Thank you! Your enquiry has been received. We'll be in touch within 24 hours.</p>
+              </div>
+            )}
+
+            {sendErr && (
+              <div className="form-success show" role="alert" style={{ background: 'rgba(192,57,43,0.08)', borderColor: '#c0392b' }}>
+                <i className="fa-solid fa-circle-exclamation" aria-hidden="true" style={{ color: '#c0392b' }} />
+                <p style={{ color: '#c0392b' }}>Something went wrong. Please try again or contact us directly on WhatsApp.</p>
               </div>
             )}
           </form>

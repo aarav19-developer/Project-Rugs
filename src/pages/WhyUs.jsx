@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
 import { useEffect, useRef, useState } from 'react'
+import PageMeta from '../Components/PageMeta'
 
 const WHY_CARDS = [
   { icon: 'fa-solid fa-hand-sparkles',  title: '100% Handmade',              desc: 'Every product is made entirely by hand — no machines, no shortcuts. Pure human craftsmanship in every thread, knot and stitch.' },
@@ -70,6 +71,11 @@ const TESTIMONIALS = [
 export default function WhyUs() {
   return (
     <>
+      <PageMeta
+        title="Why Choose Deen Dayal Rugs Exports — Trusted Indian Carpet Exporter"
+        description="100% handmade, export quality standards, custom sizing, eco-friendly materials, competitive factory pricing. Trusted by buyers in 20+ countries worldwide."
+        canonical="https://www.deendayalrugs.com/why-us"
+      />
       <PageHero
         eyebrow="Why Partner With Us"
         title="The Deen Dayal Difference"
