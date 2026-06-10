@@ -35,24 +35,25 @@
   flex-shrink: 0;
 }
 
-/* Image wrapper — transparent on dark navbar, slight bg when scrolled */
+/* Image wrapper — matches navbar background at each state */
 .nav-logo-img-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  /* Dark navbar state: olive background */
+  background: var(--olive-dark);
   border-radius: 8px;
-  padding: 3px;
+  padding: 5px;
   flex-shrink: 0;
   transition: background 0.35s ease;
 }
 
-/* When scrolled (light cream navbar) — slight cream tint blends naturally */
+/* Scrolled state: white/cream background matching the navbar */
 .navbar.scrolled .nav-logo-img-wrap {
-  background: rgba(250, 246, 239, 0.5);
+  background: rgba(250, 246, 239, 0.97);
 }
 
-/* The logo image — show icon portion */
+/* The logo image */
 .logo-img-only {
   width: 44px;
   height: 44px;
@@ -60,12 +61,12 @@
   object-position: center top;
   display: block;
   border-radius: 4px;
-  /* On dark navbar: invert so white bg becomes dark, black lines become white/cream */
+  /* Dark navbar: invert black lines to cream so they're visible on olive bg */
   filter: invert(1) sepia(0.1) saturate(0.5) brightness(1.1);
   transition: filter 0.35s ease;
 }
 
-/* When scrolled (light bg): restore original natural colors */
+/* Scrolled: restore original dark lines, visible on white bg */
 .navbar.scrolled .logo-img-only {
   filter: none;
 }
