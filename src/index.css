@@ -2974,10 +2974,7 @@ main {
   padding-top: 0; /* hero pages handle their own offset */
 }
 
-/* Inner pages — push below navbar */
-.page-hero + * {
-  /* page-hero handles the navbar offset */
-}
+/* Inner pages — push below navbar — handled by page-hero padding */
 
 /* All sections — no horizontal overflow */
 section {
