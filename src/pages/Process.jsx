@@ -67,6 +67,21 @@ export default function Process() {
         title="Our Manufacturing Process — Carpets & Rugs | Deen Dayal Rugs Export"
         description="From raw material selection to export packaging — 6 stages of precision craftsmanship. Eco-friendly dyes, hand-knotted and machine weaving, quality inspection and worldwide shipping."
         canonical="https://www.deendayalrugs.com/process"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://www.deendayalrugs.com/process#webpage",
+          "url": "https://www.deendayalrugs.com/process",
+          "name": "Carpet & Rug Manufacturing Process — Deen Dayal Rugs Export",
+          "description": "6-stage carpet manufacturing process: raw material selection, eco-friendly dyeing, hand-knotting, washing, quality inspection and export packaging.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deendayalrugs.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Manufacturing Process", "item": "https://www.deendayalrugs.com/process" }
+            ]
+          }
+        }}
       />
       <PageHero
         eyebrow="How We Make It"

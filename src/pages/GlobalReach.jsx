@@ -48,6 +48,21 @@ export default function GlobalReach() {
         title="Global Carpet Export Destinations — Deen Dayal Rugs Export India"
         description="Exporting handmade and machine-made carpets and rugs from Meerut, Uttar Pradesh, India to USA, UK, Germany, UAE, Australia and 20+ countries. Full export documentation and worldwide shipping."
         canonical="https://www.deendayalrugs.com/global-reach"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://www.deendayalrugs.com/global-reach#webpage",
+          "url": "https://www.deendayalrugs.com/global-reach",
+          "name": "Global Carpet Export Destinations — Deen Dayal Rugs Export India",
+          "description": "Exporting handmade carpets and rugs from Meerut, Uttar Pradesh, India to USA, UK, Germany, UAE, Australia and 20+ countries worldwide.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deendayalrugs.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Global Reach", "item": "https://www.deendayalrugs.com/global-reach" }
+            ]
+          }
+        }}
       />
       <PageHero
         eyebrow="Our Global Footprint"

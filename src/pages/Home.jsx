@@ -62,6 +62,22 @@ export default function Home() {
         title="Handmade & Machine-Made Rugs &amp; Carpet Exporter from Meerut India | Deen Dayal Rugs Export"
         description="Premium handmade and machine-made carpets, rugs, poufs and home textiles crafted in Meerut, Uttar Pradesh, India. Trusted exporter to 20+ countries worldwide. Request a sample today."
         canonical="https://www.deendayalrugs.com/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://www.deendayalrugs.com/#webpage",
+          "url": "https://www.deendayalrugs.com/",
+          "name": "Handmade & Machine-Made Rugs & Carpet Exporter from Meerut India | Deen Dayal Rugs Export",
+          "description": "Premium handmade and machine-made carpets, rugs, poufs and home textiles crafted in Meerut, Uttar Pradesh, India. Trusted exporter to 20+ countries worldwide.",
+          "isPartOf": { "@id": "https://www.deendayalrugs.com/#website" },
+          "about": { "@id": "https://www.deendayalrugs.com/#organization" },
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deendayalrugs.com/" }
+            ]
+          }
+        }}
       />
       {/* ── HERO ── */}
       <section className="hero" id="home">

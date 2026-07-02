@@ -37,6 +37,21 @@ export default function About() {
         title="About Us — Carpet & Rug Exporter from Meerut India | Deen Dayal Rugs Export"
         description="30+ years of carpet craftsmanship. Deen Dayal Rugs Export — a family-rooted exporter from Meerut, Uttar Pradesh, India. Handmade and machine-made products. Serving buyers in 20+ countries worldwide."
         canonical="https://www.deendayalrugs.com/about"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          "@id": "https://www.deendayalrugs.com/about#webpage",
+          "url": "https://www.deendayalrugs.com/about",
+          "name": "About Deen Dayal Rugs Export — 30+ Years of Carpet Craftsmanship",
+          "description": "Family-rooted carpet and rug exporter from Meerut, Uttar Pradesh, India. 30+ years of handmade and machine-made craftsmanship. ISO 9001 & ISO 14001 certified.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deendayalrugs.com/" },
+              { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.deendayalrugs.com/about" }
+            ]
+          }
+        }}
       />
       <PageHero
         eyebrow="Our Story"

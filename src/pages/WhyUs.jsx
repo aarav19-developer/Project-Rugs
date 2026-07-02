@@ -75,6 +75,21 @@ export default function WhyUs() {
         title="Why Choose Deen Dayal Rugs Export — Trusted Indian Carpet Exporter"
         description="Handmade and machine-made products. Export quality standards, custom sizing, eco-friendly materials, competitive factory pricing. Trusted by buyers in 20+ countries worldwide."
         canonical="https://www.deendayalrugs.com/why-us"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://www.deendayalrugs.com/why-us#webpage",
+          "url": "https://www.deendayalrugs.com/why-us",
+          "name": "Why Choose Deen Dayal Rugs Export — Trusted Indian Carpet Exporter",
+          "description": "12 reasons international buyers trust Deen Dayal Rugs Export — custom sizing, export quality standards, eco-friendly materials, direct factory pricing.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deendayalrugs.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Why Choose Us", "item": "https://www.deendayalrugs.com/why-us" }
+            ]
+          }
+        }}
       />
       <PageHero
         eyebrow="Why Partner With Us"

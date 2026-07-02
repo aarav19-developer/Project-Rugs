@@ -117,6 +117,21 @@ export default function Products() {
         title="Carpets, Rugs & Home Textiles | Deen Dayal Rugs Export India"
         description="Explore our range — hand-knotted carpets, hand-tufted rugs, machine-made carpets, poufs, cushions, wall art, wall hangings, wooden stools and benches. Made in Meerut, Uttar Pradesh, India."
         canonical="https://www.deendayalrugs.com/products"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": "https://www.deendayalrugs.com/products#webpage",
+          "url": "https://www.deendayalrugs.com/products",
+          "name": "Carpets, Rugs & Home Textiles | Deen Dayal Rugs Export India",
+          "description": "Hand-knotted carpets, hand-tufted rugs, machine-made carpets, poufs, cushions, wall art, wall hangings, wooden stools and benches. Made in Meerut, Uttar Pradesh, India.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deendayalrugs.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.deendayalrugs.com/products" }
+            ]
+          }
+        }}
       />
       <PageHero
         eyebrow="Our Collection"

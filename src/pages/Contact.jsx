@@ -97,6 +97,21 @@ export default function Contact() {
         title="Contact Us — Request a Quote or Sample | Deen Dayal Rugs Export"
         description="Send an enquiry to Deen Dayal Rugs Export in Meerut, Uttar Pradesh, India. Request product samples, custom carpet pricing, FOB/CIF quotes. We respond within 24 hours."
         canonical="https://www.deendayalrugs.com/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "@id": "https://www.deendayalrugs.com/contact#webpage",
+          "url": "https://www.deendayalrugs.com/contact",
+          "name": "Contact Deen Dayal Rugs Export — Request a Quote or Sample",
+          "description": "Request carpet samples, custom pricing, FOB/CIF quotes from Deen Dayal Rugs Export, Meerut, Uttar Pradesh, India. Response within 24 hours.",
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.deendayalrugs.com/" },
+              { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://www.deendayalrugs.com/contact" }
+            ]
+          }
+        }}
       />
       <PageHero
         eyebrow="Get in Touch"
