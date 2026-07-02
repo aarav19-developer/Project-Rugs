@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import '../style/Enquiry.css'
 
-const WHATSAPP_NUMBER = '919999999999' // TODO: Replace with real number
-const BUSINESS_EMAIL  = 'info@deendayalrugs.com' // TODO: Replace with real email
+const WHATSAPP_NUMBER = '919627111136'
+const BUSINESS_EMAIL  = 'sales@deendayalrugsexport.in'
 
 const PRODUCT_OPTIONS = [
   { value: 'carpets',      label: 'Carpets (Customized Available)' },
@@ -16,7 +16,7 @@ const PRODUCT_OPTIONS = [
 ]
 
 const FEATURES = [
-  'Free sample dispatch on request',
+  'Sample dispatch available on request',
   'Custom design and size consultation',
   'FOB / CIF pricing available',
   'Export documentation support',
@@ -65,7 +65,7 @@ export default function Enquiry() {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TODO: Replace — get free key at web3forms.com
-          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Exports`,
+          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Export`,
           from_name: form.fullName,
           email: form.email,
           phone: form.phone,
@@ -111,10 +111,10 @@ export default function Enquiry() {
             </ul>
 
             <div className="enquiry-contact-quick">
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer" className="quick-wa" aria-label="Chat with Deen Dayal Rugs Exports on WhatsApp">
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I visited your website and I'm interested in your carpet and rug products. Could you please share more details about your product range, pricing, and export options? Thank you.")}`} target="_blank" rel="noopener noreferrer" className="quick-wa" aria-label="Chat with Deen Dayal Rugs Export on WhatsApp">
                 <i className="fa-brands fa-whatsapp" aria-hidden="true" /> Chat on WhatsApp
               </a>
-              <a href={`mailto:${BUSINESS_EMAIL}`} className="quick-mail" aria-label="Email Deen Dayal Rugs Exports">
+              <a href={`mailto:${BUSINESS_EMAIL}`} className="quick-mail" aria-label="Email Deen Dayal Rugs Export">
                 <i className="fa-solid fa-envelope" aria-hidden="true" /> {BUSINESS_EMAIL}
               </a>
             </div>

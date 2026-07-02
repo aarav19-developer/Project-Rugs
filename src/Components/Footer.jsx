@@ -3,10 +3,9 @@ import '../style/Footer.css'
 
 // TODO: Replace each href with your actual social media profile URL
 const SOCIALS = [
-  { icon: 'fa-brands fa-instagram',  href: 'https://www.instagram.com/deendayalrugs',          label: 'Follow Deen Dayal Rugs Exports on Instagram' },
-  { icon: 'fa-brands fa-facebook-f', href: 'https://www.facebook.com/deendayalrugs',            label: 'Follow Deen Dayal Rugs Exports on Facebook'  },
+  { icon: 'fa-brands fa-instagram',  href: 'https://www.instagram.com/deendayalrugs',          label: 'Follow Deen Dayal Rugs Export on Instagram' },
+  { icon: 'fa-brands fa-facebook-f', href: 'https://www.facebook.com/deendayalrugs',            label: 'Follow Deen Dayal Rugs Export on Facebook'  },
   { icon: 'fa-brands fa-linkedin-in', href: 'https://www.linkedin.com/company/deen-dayal-rugs-exports', label: 'Connect on LinkedIn' },
-  { icon: 'fa-brands fa-youtube',    href: 'https://www.youtube.com/@deendayalrugs',             label: 'Watch on YouTube' },
 ]
 
 const QUICK_LINKS = [
@@ -24,10 +23,10 @@ const PRODUCT_LINKS = [
 ]
 
 const CONTACT = {
-  address:  'Industrial Area, Meerut, Uttar Pradesh — 250001, India',
-  phone:    '+91 99999 99999',       // TODO: Replace
-  email:    'info@deendayalrugs.com', // TODO: Replace
-  whatsapp: '919999999999',           // TODO: Replace
+  address:  'Plot No. 158, Sector 3, Shatabdi Nagar, Partapur Industrial Area, Meerut, Uttar Pradesh — 250103, India',
+  phone:    '+91 96271 11136',
+  email:    'sales@deendayalrugsexport.in',
+  whatsapp: '919627111136',
 }
 
 export default function Footer() {
@@ -43,7 +42,7 @@ export default function Footer() {
                 <div className="footer-logo-img-wrap">
                   <img
                     src="/logo1.jpeg"
-                    alt="Deen Dayal Rugs Exports logo"
+                    alt="Deen Dayal Rugs Export logo"
                     className="footer-logo-img-only"
                     width="48"
                     height="48"
@@ -52,10 +51,10 @@ export default function Footer() {
                 </div>
                 <div className="footer-logo-text">
                   <span className="logo-main">Deen Dayal</span>
-                  <span className="logo-sub">Rugs Exports</span>
+                  <span className="logo-sub">Rugs Export</span>
                 </div>
               </div>
-              <p>Preserving the art of Indian handmade crafts — crafted with soul, exported with pride from Meerut, India.</p>
+              <p>Crafting premium handmade &amp; machine-made rugs and textiles — exported with pride from Meerut, Uttar Pradesh, India.</p>
               <div className="footer-socials">
                 {SOCIALS.map((s) => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
@@ -91,7 +90,7 @@ export default function Footer() {
               <ul className="contact-list">
                 <li>
                   <i className="fa-solid fa-location-dot" />
-                  <span>Deen Dayal Rugs Exports,<br />{CONTACT.address}</span>
+                  <span>Deen Dayal Rugs Export,<br />{CONTACT.address}</span>
                 </li>
                 <li>
                   <i className="fa-solid fa-phone" />
@@ -103,7 +102,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <i className="fa-brands fa-whatsapp" aria-hidden="true" />
-                  <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with Deen Dayal Rugs Exports on WhatsApp">
+                  <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with Deen Dayal Rugs Export on WhatsApp">
                     Chat on WhatsApp
                   </a>
                 </li>
@@ -116,7 +115,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Deen Dayal Rugs Exports. All rights reserved. &nbsp;|&nbsp; Meerut, Uttar Pradesh, India</p>
+          <p>&copy; {new Date().getFullYear()} Deen Dayal Rugs Export. All rights reserved. &nbsp;|&nbsp; Meerut, Uttar Pradesh, India</p>
           <p className="footer-tagline">Crafted by Hand, Loved Worldwide ✦</p>
         </div>
       </div>

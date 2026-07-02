@@ -9,9 +9,8 @@ const PRODUCTS = [
   {
     id: 1,
     title: 'Carpets',
-    desc: 'The pinnacle of carpet craftsmanship — hand-knotted, hand-tufted, flat weave, and more. Individually tied knots creating dense, durable, and intricate patterns that last lifetimes.',
+    desc: 'Hand-knotted, hand-tufted, flat weave, and more — each style crafted with precision to deliver dense, durable, and intricate patterns built to endure.',
     badge: 'Customized Available',
-    // TODO: Replace with actual carpet product image
     image: 'https://placehold.co/480x560/A89070/FFF8EE?text=Carpets',
   },
   {
@@ -19,15 +18,13 @@ const PRODUCTS = [
     title: 'Poufs',
     desc: 'Handcrafted poufs made from premium wool and natural fibres — perfect as seating, footrests, or decorative accents for any living space.',
     badge: null,
-    // TODO: Replace with actual pouf product image
     image: 'https://placehold.co/480x560/8B7355/FFF8EE?text=Poufs',
   },
   {
     id: 3,
     title: 'Cushions',
-    desc: 'Artisan-made cushions in a variety of textures, patterns, and sizes — woven with the same care and precision as our finest carpets.',
+    desc: 'Artisan-made cushions in a variety of textures, patterns, and sizes — woven with the same care and precision as our finest carpets, finished with durable zip closures.',
     badge: null,
-    // TODO: Replace with actual cushion product image
     image: 'https://placehold.co/480x560/C4A882/3D3427?text=Cushions',
   },
   {
@@ -35,31 +32,27 @@ const PRODUCTS = [
     title: 'Wall Art',
     desc: 'Transform your walls with handcrafted textile art — unique, one-of-a-kind pieces that bring warmth, colour, and culture into your interior.',
     badge: null,
-    // TODO: Replace with actual wall art product image
     image: 'https://placehold.co/480x560/7A6B55/FFF8EE?text=Wall+Art',
   },
   {
     id: 5,
     title: 'Wall Hanging',
-    desc: 'Traditional and contemporary wall hangings woven by skilled artisans — each piece tells a story of craft, heritage, and artistic expression.',
+    desc: 'Traditional and contemporary wall hangings hand-woven by skilled artisans — each piece tells a story of craft, heritage, and artistic expression.',
     badge: null,
-    // TODO: Replace with actual wall hanging product image
     image: 'https://placehold.co/480x560/B8A898/3D3427?text=Wall+Hanging',
   },
   {
     id: 6,
     title: 'Stool Wood',
-    desc: 'Hand-finished wooden stools combining natural timber with handwoven textile tops — functional art that complements any interior style.',
+    desc: 'Hand-finished wooden stools crafted from eucalyptus, sheesham and teak — combining natural timber with handwoven textile tops for functional art.',
     badge: null,
-    // TODO: Replace with actual wooden stool product image
     image: 'https://placehold.co/480x560/6B7C4A/FFF8EE?text=Stool+Wood',
   },
   {
     id: 7,
     title: 'Benches',
-    desc: 'Beautifully crafted benches with handwoven upholstery — merging structural craftsmanship with the art of textile weaving for elegant seating.',
+    desc: 'Beautifully crafted benches from eucalyptus, sheesham and teak — featuring hand-woven, hand-tufted and circular knit upholstery for elegant, lasting seating.',
     badge: null,
-    // TODO: Replace with actual bench product image
     image: 'https://placehold.co/480x560/9B8A70/FFF8EE?text=Benches',
   },
 ]
@@ -90,7 +83,7 @@ export default function Products() {
                 {/* TODO: Replace p.image with actual product photo once available */}
                 <img
                   src={p.image}
-                  alt={`${p.title} — handmade ${p.title.toLowerCase()} exported from Meerut, India`}
+                  alt={`${p.title} — ${p.title.toLowerCase()} exported from Meerut, Uttar Pradesh, India`}
                   loading="lazy"
                   width="480"
                   height="560"

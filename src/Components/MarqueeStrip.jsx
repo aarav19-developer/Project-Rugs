@@ -3,7 +3,7 @@ import '../style/MarqueeStrip.css'
 const ITEMS = [
   'Hand-Knotted Carpets', 'Hand-Tufted Rugs', 'Flat Weave Rugs',
   'Woolen Carpets', 'Silk Blend Carpets', 'Custom Sizes Available',
-  'Worldwide Exports', '100% Handmade',
+  'Worldwide Exports', 'Handmade & Machine-Made',
 ]
 
 export default function MarqueeStrip() {

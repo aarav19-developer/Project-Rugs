@@ -14,7 +14,7 @@ const PRODUCT_OPTIONS = [
 ]
 
 const FEATURES = [
-  'Free sample dispatch on request',
+  'Sample dispatch available on request',
   'Custom design and size consultation',
   'FOB / CIF pricing available',
   'Export documentation support',
@@ -22,10 +22,10 @@ const FEATURES = [
 ]
 
 const CONTACT_INFO = [
-  { icon: 'fa-solid fa-location-dot', label: 'Address',   value: 'Industrial Area, Meerut, Uttar Pradesh — 250001, India', href: null },
-  { icon: 'fa-solid fa-phone',        label: 'Phone',     value: '+91 99999 99999',          href: 'tel:+919999999999'             },
-  { icon: 'fa-solid fa-envelope',     label: 'Email',     value: 'info@deendayalrugs.com',   href: 'mailto:info@deendayalrugs.com' },
-  { icon: 'fa-brands fa-whatsapp',    label: 'WhatsApp',  value: 'Chat with us',             href: 'https://wa.me/919999999999'    },
+  { icon: 'fa-solid fa-location-dot', label: 'Address',   value: 'Plot No. 158, Sector 3, Shatabdi Nagar, Partapur Industrial Area, Meerut, Uttar Pradesh — 250103, India', href: null },
+  { icon: 'fa-solid fa-phone',        label: 'Phone',     value: '+91 96271 11136',              href: 'tel:+919627111136'                      },
+  { icon: 'fa-solid fa-envelope',     label: 'Email',     value: 'sales@deendayalrugsexport.in', href: 'mailto:sales@deendayalrugsexport.in'    },
+  { icon: 'fa-brands fa-whatsapp',    label: 'WhatsApp',  value: 'Chat with us',                 href: `https://wa.me/919627111136?text=${encodeURIComponent("Hello, I visited your website and I'm interested in your carpet and rug products. Could you please share more details about your product range, pricing, and export options? Thank you.")}`             },
 ]
 
 const INITIAL = { fullName: '', email: '', phone: '', country: '', productInterest: '', message: '' }
@@ -67,7 +67,7 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TODO: Replace with your Web3Forms key from web3forms.com
-          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Exports`,
+          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Export`,
           from_name: form.fullName,
           email: form.email,
           phone: form.phone,
@@ -94,8 +94,8 @@ export default function Contact() {
   return (
     <>
       <PageMeta
-        title="Contact Us — Request a Quote or Sample | Deen Dayal Rugs Exports"
-        description="Send an enquiry to Deen Dayal Rugs Exports in Meerut, India. Request product samples, custom carpet pricing, FOB/CIF quotes. We respond within 24 hours."
+        title="Contact Us — Request a Quote or Sample | Deen Dayal Rugs Export"
+        description="Send an enquiry to Deen Dayal Rugs Export in Meerut, Uttar Pradesh, India. Request product samples, custom carpet pricing, FOB/CIF quotes. We respond within 24 hours."
         canonical="https://www.deendayalrugs.com/contact"
       />
       <PageHero
@@ -128,11 +128,11 @@ export default function Contact() {
               </ul>
 
               <div className="enquiry-contact-quick">
-                <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="quick-wa">
+                <a href={`https://wa.me/919627111136?text=${encodeURIComponent("Hello, I visited your website and I'm interested in your carpet and rug products. Could you please share more details about your product range, pricing, and export options? Thank you.")}`} target="_blank" rel="noreferrer" className="quick-wa">
                   <i className="fa-brands fa-whatsapp" /> Chat on WhatsApp
                 </a>
-                <a href="mailto:info@deendayalrugs.com" className="quick-mail">
-                  <i className="fa-solid fa-envelope" /> info@deendayalrugs.com
+                <a href="mailto:sales@deendayalrugsexport.in" className="quick-mail">
+                  <i className="fa-solid fa-envelope" /> sales@deendayalrugsexport.in
                 </a>
               </div>
             </div>
@@ -243,20 +243,69 @@ export default function Contact() {
           <div className="section-header reveal-up">
             <p className="section-eyebrow">Find Us</p>
             <h2 className="section-title">Our <em>Location</em></h2>
-            <p className="section-desc">Located in the industrial heartland of Meerut, Uttar Pradesh — the carpet weaving capital of India.</p>
+            <p className="section-desc">Located at Plot No. 158, Sector 3, Shatabdi Nagar, Partapur Industrial Area, Meerut, Uttar Pradesh, India — the carpet weaving capital of India.</p>
           </div>
-          <div className="map-embed-wrapper reveal-up">
-            <iframe
-              title="Deen Dayal Rugs Exports — Meerut, Uttar Pradesh, India"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.84156551504!2d77.5546!3d28.9845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c65a3c3c1abf3%3A0x9b2e8e9e7c3b7c3a!2sMeerut%2C%20Uttar%20Pradesh%2C%20India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
-              width="100%"
-              height="420"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              aria-label="Google Map showing Meerut, Uttar Pradesh, India — location of Deen Dayal Rugs Exports"
-            />
+
+          <div className="map-layout reveal-up">
+            {/* ── MAP ── */}
+            <div className="map-embed-wrapper">
+              <iframe
+                title="Deen Dayal Rugs Export — Plot No. 158, Sector 3, Shatabdi Nagar, Partapur Industrial Area, Meerut"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.146!2d77.7877!3d28.9823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c6573a8e9b8e7%3A0x1!2sPartapur+Industrial+Area%2C+Meerut%2C+Uttar+Pradesh+250103%2C+India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                aria-label="Google Map showing Deen Dayal Rugs Export location — Partapur Industrial Area, Meerut, Uttar Pradesh, India"
+              />
+            </div>
+
+            {/* ── SIDE PANEL ── */}
+            <div className="map-side-panel">
+              <div className="map-side-icon">
+                <i className="fa-solid fa-location-dot" />
+              </div>
+              <h3>Deen Dayal Rugs Export</h3>
+              <p>
+                Plot No. 158, Sector 3,<br />
+                Shatabdi Nagar, Partapur Industrial Area,<br />
+                Meerut, Uttar Pradesh — 250103,<br />
+                India
+              </p>
+
+              <div className="map-side-divider" />
+
+              <div className="map-side-info">
+                <span><i className="fa-solid fa-phone" /> +91 96271 11136</span>
+                <span><i className="fa-solid fa-envelope" /> sales@deendayalrugsexport.in</span>
+              </div>
+
+              <div className="map-side-divider" />
+
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=Partapur+Industrial+Area+Meerut+Uttar+Pradesh+250103+India"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-get-directions"
+                aria-label="Get directions to Deen Dayal Rugs Export on Google Maps"
+              >
+                <i className="fa-solid fa-diamond-turn-right" />
+                Get Directions
+              </a>
+
+              <a
+                href="https://maps.google.com/?q=Partapur+Industrial+Area,+Meerut,+Uttar+Pradesh+250103,+India"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-view-map"
+                aria-label="View on Google Maps"
+              >
+                <i className="fa-solid fa-map" />
+                View on Google Maps
+              </a>
+            </div>
           </div>
         </div>
       </section>

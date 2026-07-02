@@ -20,11 +20,11 @@ export default function Hero() {
 
       {/* Content */}
       <div className="hero-content">
-        <p className="hero-eyebrow">Est. in Meerut, India &nbsp;·&nbsp; Exporting Excellence</p>
+        <p className="hero-eyebrow">Est. in Meerut, Uttar Pradesh, India &nbsp;·&nbsp; Exporting Excellence</p>
 
         <h1 className="hero-title">
           Deen Dayal<br />
-          <span>Rugs Exports</span>
+          <span>Rugs Export</span>
         </h1>
 
         <p className="hero-tagline">Crafted by Hand, Loved Worldwide</p>

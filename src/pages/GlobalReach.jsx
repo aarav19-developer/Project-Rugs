@@ -8,18 +8,28 @@ import {
 const GEO_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
 
 const DESTINATIONS = [
-  { flag: '🇺🇸', name: 'USA',            region: 'Americas',    coords: [-95.71,  37.09] },
-  { flag: '🇨🇦', name: 'Canada',         region: 'Americas',    coords: [-106.35, 56.13] },
-  { flag: '🇬🇧', name: 'United Kingdom', region: 'Europe',      coords: [  -3.44, 55.38] },
-  { flag: '🇩🇪', name: 'Germany',        region: 'Europe',      coords: [ 10.45,  51.17] },
-  { flag: '🇫🇷', name: 'France',         region: 'Europe',      coords: [  2.21,  46.23] },
-  { flag: '🇮🇹', name: 'Italy',          region: 'Europe',      coords: [ 12.57,  41.87] },
-  { flag: '🇳🇱', name: 'Netherlands',    region: 'Europe',      coords: [  5.29,  52.13] },
-  { flag: '🇸🇪', name: 'Sweden',         region: 'Europe',      coords: [ 18.64,  60.13] },
-  { flag: '🇦🇪', name: 'UAE',            region: 'Middle East', coords: [ 53.85,  23.42] },
-  { flag: '🇸🇦', name: 'Saudi Arabia',   region: 'Middle East', coords: [ 45.08,  23.89] },
-  { flag: '🇦🇺', name: 'Australia',      region: 'Asia-Pacific',coords: [133.78, -25.27] },
-  { flag: '🇯🇵', name: 'Japan',          region: 'Asia-Pacific',coords: [138.25,  36.20] },
+  { flag: '🇺🇸', code: 'us', name: 'USA',            region: 'Americas',    coords: [-95.71,  37.09] },
+  { flag: '🇨🇦', code: 'ca', name: 'Canada',         region: 'Americas',    coords: [-106.35, 56.13] },
+  { flag: '🇬🇧', code: 'gb', name: 'United Kingdom', region: 'Europe',      coords: [  -3.44, 55.38] },
+  { flag: '🇩🇪', code: 'de', name: 'Germany',        region: 'Europe',      coords: [ 10.45,  51.17] },
+  { flag: '🇫🇷', code: 'fr', name: 'France',         region: 'Europe',      coords: [  2.21,  46.23] },
+  { flag: '🇮🇹', code: 'it', name: 'Italy',          region: 'Europe',      coords: [ 12.57,  41.87] },
+  { flag: '🇳🇱', code: 'nl', name: 'Netherlands',    region: 'Europe',      coords: [  5.29,  52.13] },
+  { flag: '🇸🇪', code: 'se', name: 'Sweden',         region: 'Europe',      coords: [ 18.64,  60.13] },
+  { flag: '🇨🇭', code: 'ch', name: 'Switzerland',    region: 'Europe',      coords: [  8.23,  46.82] },
+  { flag: '🇪🇸', code: 'es', name: 'Spain',          region: 'Europe',      coords: [ -3.75,  40.46] },
+  { flag: '🇦🇪', code: 'ae', name: 'UAE',            region: 'Middle East', coords: [ 53.85,  23.42] },
+  { flag: '🇸🇦', code: 'sa', name: 'Saudi Arabia',   region: 'Middle East', coords: [ 45.08,  23.89] },
+  { flag: '🇶🇦', code: 'qa', name: 'Qatar',          region: 'Middle East', coords: [ 51.18,  25.35] },
+  { flag: '🇴🇲', code: 'om', name: 'Oman',           region: 'Middle East', coords: [ 57.55,  21.51] },
+  { flag: '🇯🇴', code: 'jo', name: 'Jordan',         region: 'Middle East', coords: [ 36.24,  30.59] },
+  { flag: '🇮🇱', code: 'il', name: 'Israel',         region: 'Middle East', coords: [ 34.85,  31.05] },
+  { flag: '🇧🇭', code: 'bh', name: 'Bahrain',        region: 'Middle East', coords: [ 50.55,  26.07] },
+  { flag: '🇦🇺', code: 'au', name: 'Australia',      region: 'Asia-Pacific',coords: [133.78, -25.27] },
+  { flag: '🇯🇵', code: 'jp', name: 'Japan',          region: 'Asia-Pacific',coords: [138.25,  36.20] },
+  { flag: '🇻🇳', code: 'vn', name: 'Vietnam',        region: 'Asia-Pacific',coords: [108.00,  14.06] },
+  { flag: '🇵🇭', code: 'ph', name: 'Philippines',    region: 'Asia-Pacific',coords: [121.77,  12.88] },
+  { flag: '🇰🇪', code: 'ke', name: 'Kenya',          region: 'Africa',      coords: [ 37.91,  -0.02] },
 ]
 
 const REGIONS = [...new Set(DESTINATIONS.map((d) => d.region))]
@@ -35,8 +45,8 @@ export default function GlobalReach() {
   return (
     <>
       <PageMeta
-        title="Global Carpet Export Destinations — Deen Dayal Rugs Exports India"
-        description="Exporting handmade carpets and rugs from Meerut, India to USA, UK, Germany, UAE, Australia and 20+ countries. Full export documentation and worldwide shipping."
+        title="Global Carpet Export Destinations — Deen Dayal Rugs Export India"
+        description="Exporting handmade and machine-made carpets and rugs from Meerut, Uttar Pradesh, India to USA, UK, Germany, UAE, Australia and 20+ countries. Full export documentation and worldwide shipping."
         canonical="https://www.deendayalrugs.com/global-reach"
       />
       <PageHero
@@ -52,11 +62,11 @@ export default function GlobalReach() {
           <div className="section-header reveal-up">
             <p className="section-eyebrow">Exporting Since the 2000s</p>
             <h2 className="section-title">
-              20+ Countries,<br /><em>One Source</em>
+              25+ Countries,<br /><em>One Source</em>
             </h2>
             <p className="section-desc">
-              From a single workshop in Meerut to buyers in over 20 countries — our export
-              network spans Americas, Europe, the Middle East and Asia-Pacific.
+              From a single workshop in Meerut to buyers in over 25 countries — our export
+              network spans Americas, Europe, the Middle East, Asia-Pacific and Africa.
             </p>
           </div>
         </div>
@@ -98,7 +108,7 @@ export default function GlobalReach() {
               </Marker>
             </ComposableMap>
             <div className="map-legend">
-              <span className="legend-item"><span className="legend-dot" style={{ background: '#B8922A' }} /> Origin — Meerut, India</span>
+              <span className="legend-item"><span className="legend-dot" style={{ background: '#B8922A' }} /> Origin — Meerut, Uttar Pradesh, India</span>
               <span className="legend-item"><span className="legend-dot" style={{ background: '#5C6B3A' }} /> Export Destination</span>
             </div>
           </div>
@@ -116,9 +126,16 @@ export default function GlobalReach() {
             <div className="region-block reveal-up" key={region}>
               <h3 className="region-title"><i className="fa-solid fa-location-dot" /> {region}</h3>
               <div className="country-grid">
-                {DESTINATIONS.filter((d) => d.region === region).map(({ flag, name }) => (
+                {DESTINATIONS.filter((d) => d.region === region).map(({ code, name }) => (
                   <div className="country-card" key={name}>
-                    <span className="flag">{flag}</span>
+                    <img
+                      src={`https://flagcdn.com/w40/${code}.png`}
+                      srcSet={`https://flagcdn.com/w80/${code}.png 2x`}
+                      width="40"
+                      height="27"
+                      alt={`${name} flag`}
+                      className="country-flag-img"
+                    />
                     <span>{name}</span>
                   </div>
                 ))}

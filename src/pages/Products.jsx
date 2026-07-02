@@ -11,7 +11,7 @@ const PRODUCTS = [
     icon: 'fa-solid fa-grip',
     shortDesc: 'Hand-knotted, hand-tufted, and flat weave — crafted to last lifetimes.',
     details: [
-      'Hand-Knotted — individually tied knots, 3–12 months per piece',
+      'Hand-Knotted — individually tied knots for unmatched density and durability',
       'Hand-Tufted — rich textures, faster production for contemporary designs',
       'Flat Weave — lightweight, reversible, bold geometric patterns',
       'Custom sizes from small accent rugs to grand hall carpets',
@@ -27,7 +27,7 @@ const PRODUCTS = [
     shortDesc: 'Handcrafted wool and jute poufs — perfect as footrests or accent seating.',
     details: [
       'Round, square and custom shapes available',
-      'Natural wool, cotton, jute and leather finishes',
+      'Natural wool, cotton and jute finishes',
       'Filled and unfilled options for easy shipping',
       'Wide range of patterns — geometric, striped, and solid',
       'Custom colours and sizes on request',
@@ -45,7 +45,7 @@ const PRODUCTS = [
       'Standard sizes: 18×18", 20×20", 24×24" — custom available',
       'Natural wool, cotton, silk blend fabrics',
       'Traditional motifs, geometric patterns, and modern minimalist designs',
-      'Zip closure, inner cushion available on request',
+      'Durable zip closure with premium finishing on all edges',
     ],
   },
   {
@@ -71,7 +71,7 @@ const PRODUCTS = [
     icon: 'fa-solid fa-panorama',
     shortDesc: 'Bohemian and traditional wall hangings crafted with wool, cotton, and natural fibres.',
     details: [
-      'Hand-knotted macramé and woven styles',
+      'Hand-woven macramé and tapestry styles',
       'Natural cotton, jute, wool and mixed fibre options',
       'Driftwood, brass rod and wooden dowel mounting options',
       'Boho, Scandinavian and traditional Indian design themes',
@@ -86,7 +86,7 @@ const PRODUCTS = [
     icon: 'fa-solid fa-chair',
     shortDesc: 'Solid wood stools with hand-woven or hand-tufted upholstered tops.',
     details: [
-      'Solid mango, sheesham and teak wood frames',
+      'Eucalyptus, sheesham and teak wood frames',
       'Hand-woven or hand-tufted fabric seats',
       'Round, square and drum shapes available',
       'Natural wood finish, painted and distressed options',
@@ -101,8 +101,8 @@ const PRODUCTS = [
     icon: 'fa-solid fa-couch',
     shortDesc: 'Handcrafted wooden benches with fabric-upholstered seats — ideal for any interior.',
     details: [
-      'Solid wood construction — mango, sheesham, teak',
-      'Hand-woven and upholstered seat cushions',
+      'Eucalyptus, sheesham and teak wood construction',
+      'Hand-woven, hand-tufted and circular knit upholstered seat cushions',
       'Entryway, bedroom and hospitality sizes available',
       'Storage benches and ottomans also available',
       'Custom dimensions, fabrics and wood finishes',
@@ -114,14 +114,14 @@ export default function Products() {
   return (
     <>
       <PageMeta
-        title="Handmade Carpets, Rugs & Home Textiles | Deen Dayal Rugs Exports India"
-        description="Explore our range — hand-knotted carpets, hand-tufted rugs, poufs, cushions, wall art, wall hangings, wooden stools and benches. 100% handmade in Meerut, India."
+        title="Carpets, Rugs & Home Textiles | Deen Dayal Rugs Export India"
+        description="Explore our range — hand-knotted carpets, hand-tufted rugs, machine-made carpets, poufs, cushions, wall art, wall hangings, wooden stools and benches. Made in Meerut, Uttar Pradesh, India."
         canonical="https://www.deendayalrugs.com/products"
       />
       <PageHero
         eyebrow="Our Collection"
         title="Every Piece, A Masterpiece"
-        desc="7 categories of 100% handmade products — crafted with precision, purpose, and soul."
+        desc="7 categories of premium products — crafted by hand and precision machinery, with purpose, precision, and soul."
         bg="#A07850"
       />
 
@@ -131,11 +131,11 @@ export default function Products() {
           <div className="section-header reveal-up">
             <p className="section-eyebrow">What We Make</p>
             <h2 className="section-title">
-              Handmade Products<br /><em>for the World</em>
+              Premium Products<br /><em>for the World</em>
             </h2>
             <p className="section-desc">
               From floor to wall, from seating to art — every product is crafted by skilled
-              artisans using traditional techniques and natural materials.
+              artisans or precision machinery, using traditional techniques and quality materials.
             </p>
           </div>
         </div>

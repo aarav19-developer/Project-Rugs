@@ -4,17 +4,17 @@ import { useEffect, useRef, useState } from 'react'
 import PageMeta from '../Components/PageMeta'
 
 const WHY_CARDS = [
-  { icon: 'fa-solid fa-hand-sparkles',  title: '100% Handmade',              desc: 'Every product is made entirely by hand — no machines, no shortcuts. Pure human craftsmanship in every thread, knot and stitch.' },
+  { icon: 'fa-solid fa-hand-sparkles',  title: 'Handmade & Machine-Made',     desc: 'We craft our products both by skilled artisan hands and precision machinery — the perfect blend of traditional character and consistent, scalable quality.' },
   { icon: 'fa-solid fa-certificate',    title: 'Export Quality Standards',   desc: 'We meet international quality, safety and compliance standards required by buyers in the USA, EU, UK, UAE and beyond.' },
   { icon: 'fa-solid fa-ruler-combined', title: 'Custom Sizing Available',    desc: 'From small accent rugs to grand hall carpets — we produce any dimension with precision to fit your exact project needs.' },
-  { icon: 'fa-solid fa-hourglass-half', title: 'Decades of Craftsmanship',   desc: 'Over 30 years of experience in handmade textile manufacturing, with deep mastery of traditional Indian weaving techniques.' },
+  { icon: 'fa-solid fa-hourglass-half', title: 'Decades of Craftsmanship',   desc: 'Over 30 years of experience in textile manufacturing, with deep mastery of both traditional Indian weaving techniques and modern production methods.' },
   { icon: 'fa-solid fa-leaf',           title: 'Sustainable Materials',      desc: 'We use natural, eco-friendly fibres and azo-free dyes — responsible manufacturing for a healthier planet and safer products.' },
   { icon: 'fa-solid fa-truck-fast',     title: 'Timely Delivery',            desc: 'We understand your timelines. Our production planning and logistics team ensures on-time dispatch and reliable delivery worldwide.' },
-  { icon: 'fa-solid fa-tags',           title: 'Competitive Pricing',        desc: 'Direct factory pricing with no middlemen — giving you the best value for premium handmade products sourced straight from the maker.' },
+  { icon: 'fa-solid fa-tags',           title: 'Competitive Pricing',        desc: 'Direct factory pricing with no middlemen — giving you the best value for premium products sourced straight from the maker.' },
   { icon: 'fa-solid fa-earth-americas', title: 'Worldwide Shipping',         desc: 'We handle end-to-end export documentation, freight and logistics — delivering your order safely to any destination on the globe.' },
   { icon: 'fa-solid fa-paintbrush',     title: 'Custom Design Service',      desc: 'Bring your own design or work with our in-house design team to create bespoke patterns, colourways and product configurations.' },
   { icon: 'fa-solid fa-headset',        title: 'Dedicated Export Support',   desc: 'A dedicated account manager handles your orders from sampling to delivery — keeping you informed at every stage.' },
-  { icon: 'fa-solid fa-flask',          title: 'Free Sample Service',        desc: 'We dispatch free samples of our products so you can evaluate quality, texture and colour before placing a production order.' },
+  { icon: 'fa-solid fa-flask',          title: 'Sample Service Available',   desc: 'We dispatch product samples so you can evaluate quality, texture and colour firsthand before placing a production order.' },
   { icon: 'fa-solid fa-shield-halved',  title: 'Secure Transactions',        desc: 'Transparent pricing, professional invoicing, and full export documentation — every transaction is handled with complete professionalism.' },
 ]
 
@@ -54,7 +54,7 @@ function Counter({ target, suffix, label, format }) {
 }
 
 const FACT_CARDS = [
-  { icon: 'fa-solid fa-clock',            title: 'Months in the Making',     body: <>A single hand-knotted carpet can take <strong>3 to 12 months</strong> to complete — every knot tied by hand.</> },
+  { icon: 'fa-solid fa-clock',            title: 'Precision at Every Step',   body: <>Every product undergoes rigorous quality checks — from fibre selection and dyeing to weaving and final finishing — ensuring <strong>consistent excellence</strong> in every piece.</> },
   { icon: 'fa-solid fa-infinity',         title: 'Million Knots, One Carpet', body: <>A high-quality carpet can contain over <strong>1 million individual knots</strong> per square metre.</> },
   { icon: 'fa-solid fa-landmark',         title: '500-Year Heritage',         body: <>Carpet weaving in India dates back over <strong>500 years</strong> to the Mughal era.</> },
   { icon: 'fa-solid fa-indian-rupee-sign',title: 'Billion-Dollar Industry',   body: <>India's handmade carpet export industry is worth over <strong>USD 1.4 billion annually</strong>.</> },
@@ -72,8 +72,8 @@ export default function WhyUs() {
   return (
     <>
       <PageMeta
-        title="Why Choose Deen Dayal Rugs Exports — Trusted Indian Carpet Exporter"
-        description="100% handmade, export quality standards, custom sizing, eco-friendly materials, competitive factory pricing. Trusted by buyers in 20+ countries worldwide."
+        title="Why Choose Deen Dayal Rugs Export — Trusted Indian Carpet Exporter"
+        description="Handmade and machine-made products. Export quality standards, custom sizing, eco-friendly materials, competitive factory pricing. Trusted by buyers in 20+ countries worldwide."
         canonical="https://www.deendayalrugs.com/why-us"
       />
       <PageHero

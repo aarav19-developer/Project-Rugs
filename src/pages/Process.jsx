@@ -23,7 +23,7 @@ const STEPS = [
     num: '03',
     icon: 'fa-solid fa-hands',
     title: 'Weaving & Knotting by Hand',
-    desc: 'Master weavers work on traditional looms, tying hundreds of thousands of individual knots — each placed by skilled hands following age-old techniques unique to the Meerut region.',
+    desc: 'Master weavers work on traditional looms, tying hundreds of thousands of individual knots — each placed by skilled hands following age-old techniques unique to the Meerut, Uttar Pradesh, India region.',
     detail: 'A single square metre of hand-knotted carpet can take weeks to complete. Our weavers follow detailed design charts while maintaining complete creative fidelity to the original pattern.',
     bg: '#A07850',
   },
@@ -64,8 +64,8 @@ export default function Process() {
   return (
     <>
       <PageMeta
-        title="How We Make Handmade Carpets — Manufacturing Process | Deen Dayal Rugs Exports"
-        description="From raw material selection to export packaging — 6 stages of precision handcraft. Eco-friendly dyes, hand-knotted weaving, quality inspection and worldwide shipping."
+        title="Our Manufacturing Process — Carpets & Rugs | Deen Dayal Rugs Export"
+        description="From raw material selection to export packaging — 6 stages of precision craftsmanship. Eco-friendly dyes, hand-knotted and machine weaving, quality inspection and worldwide shipping."
         canonical="https://www.deendayalrugs.com/process"
       />
       <PageHero

@@ -8,14 +8,14 @@ const PREVIEWS = [
     to: '/about',
     icon: 'fa-solid fa-store',
     title: 'Our Story',
-    desc: '30+ years of handcraft legacy rooted in Meerut, UP — the heartland of India\'s carpet industry.',
+    desc: '30+ years of legacy rooted in Meerut, Uttar Pradesh, India — the heartland of India\'s carpet industry.',
     color: '#5C6B3A',
   },
   {
     to: '/products',
     icon: 'fa-solid fa-grip',
     title: 'Our Products',
-    desc: 'Carpets, Poufs, Cushions, Wall Art, Wall Hangings, Stools & Benches — all 100% handmade.',
+    desc: 'Carpets, Poufs, Cushions, Wall Art, Wall Hangings, Stools & Benches — crafted by hand and precision machinery.',
     color: '#A07850',
   },
   {
@@ -52,15 +52,15 @@ const HIGHLIGHTS = [
   { num: '30+',   label: 'Years of Craftsmanship' },
   { num: '500+',  label: 'Designs in Portfolio'   },
   { num: '20+',   label: 'Countries Served'        },
-  { num: '100%',  label: 'Handmade Products'       },
+  { num: '2',     label: 'Production Methods'      },
 ]
 
 export default function Home() {
   return (
     <>
       <PageMeta
-        title="Handmade Rugs &amp; Carpet Exporter from Meerut India | Deen Dayal Rugs Exports"
-        description="Premium handmade carpets, rugs, poufs and home textiles crafted by master artisans in Meerut, India. Trusted exporter to 20+ countries worldwide. Request a free sample."
+        title="Handmade & Machine-Made Rugs &amp; Carpet Exporter from Meerut India | Deen Dayal Rugs Export"
+        description="Premium handmade and machine-made carpets, rugs, poufs and home textiles crafted in Meerut, Uttar Pradesh, India. Trusted exporter to 20+ countries worldwide. Request a sample today."
         canonical="https://www.deendayalrugs.com/"
       />
       {/* ── HERO ── */}
@@ -78,14 +78,14 @@ export default function Home() {
 
         <div className="hero-content">
           <p className="hero-eyebrow">
-            <span className="eyebrow-desktop">Est. in Meerut, India &nbsp;·&nbsp; Exporting Excellence Worldwide</span>
-            <span className="eyebrow-mobile">Est. in Meerut, India · Exporting Worldwide</span>
+            <span className="eyebrow-desktop">Est. in Meerut, Uttar Pradesh, India &nbsp;·&nbsp; Exporting Excellence Worldwide</span>
+            <span className="eyebrow-mobile">Est. in Meerut, UP, India · Exporting Worldwide</span>
           </p>
           <h1 className="hero-title">
             Deen Dayal<br />
-            <span>Rugs Exports</span>
+            <span>Rugs Export</span>
           </h1>
-          <p className="hero-tagline">Crafted by Hand, Loved Worldwide</p>
+          <p className="hero-tagline">RESPONSIBILITY | RELIABILITY | TRANSPARENCY</p>
           <p className="hero-desc">
             Weaving generations of tradition into every knot — premium handmade carpets and
             lifestyle products crafted by master artisans, delivered to the world's finest
@@ -125,12 +125,12 @@ export default function Home() {
         <div className="container">
           <div className="home-intro-grid">
             <div className="home-intro-text reveal-left">
-              <p className="section-eyebrow">Welcome to Deen Dayal Rugs Exports</p>
+              <p className="section-eyebrow">Welcome to Deen Dayal Rugs Export</p>
               <h2 className="section-title">
                 A Legacy Woven<br /><em>Thread by Thread</em>
               </h2>
               <p>
-                Born in the carpet weaving heartland of <strong>Meerut, Uttar Pradesh</strong>,
+                Born in the carpet weaving heartland of <strong>Meerut, Uttar Pradesh, India</strong>,
                 we are a family-rooted export house that has grown from a small artisan workshop
                 into a globally trusted name in handmade textile exports.
               </p>
@@ -165,7 +165,7 @@ export default function Home() {
           <div className="section-header reveal-up">
             <p className="section-eyebrow">Everything We Offer</p>
             <h2 className="section-title">
-              Explore Deen Dayal<br /><em>Rugs Exports</em>
+              Explore Deen Dayal<br /><em>Rugs Export</em>
             </h2>
             <p className="section-desc">
               Navigate through our pages to discover the full story, product range,
@@ -201,7 +201,7 @@ export default function Home() {
           <div className="section-header reveal-up">
             <p className="section-eyebrow">Our Product Range</p>
             <h2 className="section-title">
-              7 Categories of<br /><em>Handmade Excellence</em>
+              7 Categories of<br /><em>Crafted Excellence</em>
             </h2>
           </div>
           <div className="teaser-grid">
@@ -239,12 +239,12 @@ export default function Home() {
         <div className="container">
           <div className="home-cta-inner reveal-up">
             <div className="home-cta-text">
-              <h2>Ready to Source Premium Handmade Products?</h2>
-              <p>Talk to our export team — free samples, custom designs, and competitive pricing available.</p>
+              <h2>Ready to Source Premium Rugs & Textile Products?</h2>
+              <p>Talk to our export team — sample dispatch on request, custom designs, and competitive pricing available.</p>
             </div>
             <div className="home-cta-btns">
               <Link to="/contact" className="btn-primary">Get a Quote</Link>
-              <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer" className="btn-wa">
+              <a href={`https://wa.me/919627111136?text=${encodeURIComponent("Hello, I visited your website and I'm interested in your carpet and rug products. Could you please share more details about your product range, pricing, and export options? Thank you.")}`} target="_blank" rel="noreferrer" className="btn-wa">
                 <i className="fa-brands fa-whatsapp" /> WhatsApp Us
               </a>
             </div>

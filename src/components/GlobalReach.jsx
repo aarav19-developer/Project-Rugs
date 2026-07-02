@@ -6,26 +6,32 @@ import '../style/GlobalReach.css'
 // TODO: Add or remove countries as per actual export destinations
 // Each entry has: flag emoji, name, and approximate SVG map coordinates (x%, y%)
 const EXPORT_COUNTRIES = [
-  { flag: '🇺🇸', name: 'USA',          x: 18,  y: 38 },
-  { flag: '🇬🇧', name: 'United Kingdom',x: 46,  y: 26 },
-  { flag: '🇩🇪', name: 'Germany',       x: 50,  y: 27 },
-  { flag: '🇫🇷', name: 'France',        x: 48,  y: 30 },
-  { flag: '🇦🇪', name: 'UAE',           x: 62,  y: 42 },
-  { flag: '🇦🇺', name: 'Australia',     x: 82,  y: 70 },
-  { flag: '🇨🇦', name: 'Canada',        x: 20,  y: 28 },
-  { flag: '🇮🇹', name: 'Italy',         x: 51,  y: 32 },
-  { flag: '🇯🇵', name: 'Japan',         x: 84,  y: 34 },
-  { flag: '🇳🇱', name: 'Netherlands',   x: 49,  y: 26 },
-  { flag: '🇸🇦', name: 'Saudi Arabia',  x: 60,  y: 42 },
-  { flag: '🇸🇪', name: 'Sweden',        x: 51,  y: 22 },
-  // TODO: Add more countries as provided by the client
-  // Format: { flag: '🇽🇽', name: 'Country Name', x: XX, y: XX }
-  // x = horizontal % position on map (0=left, 100=right)
-  // y = vertical % position on map (0=top, 100=bottom)
+  { flag: '🇺🇸', code: 'us', name: 'USA',            x: 18,  y: 38 },
+  { flag: '🇬🇧', code: 'gb', name: 'United Kingdom', x: 46,  y: 26 },
+  { flag: '🇩🇪', code: 'de', name: 'Germany',        x: 50,  y: 27 },
+  { flag: '🇫🇷', code: 'fr', name: 'France',         x: 48,  y: 30 },
+  { flag: '🇦🇪', code: 'ae', name: 'UAE',            x: 62,  y: 42 },
+  { flag: '🇦🇺', code: 'au', name: 'Australia',      x: 82,  y: 70 },
+  { flag: '🇨🇦', code: 'ca', name: 'Canada',         x: 20,  y: 28 },
+  { flag: '🇮🇹', code: 'it', name: 'Italy',          x: 51,  y: 32 },
+  { flag: '🇯🇵', code: 'jp', name: 'Japan',          x: 84,  y: 34 },
+  { flag: '🇳🇱', code: 'nl', name: 'Netherlands',    x: 49,  y: 26 },
+  { flag: '🇸🇦', code: 'sa', name: 'Saudi Arabia',   x: 60,  y: 42 },
+  { flag: '🇸🇪', code: 'se', name: 'Sweden',         x: 51,  y: 22 },
+  { flag: '🇶🇦', code: 'qa', name: 'Qatar',          x: 61,  y: 43 },
+  { flag: '🇴🇲', code: 'om', name: 'Oman',           x: 63,  y: 45 },
+  { flag: '🇯🇴', code: 'jo', name: 'Jordan',         x: 58,  y: 38 },
+  { flag: '🇮🇱', code: 'il', name: 'Israel',         x: 57,  y: 37 },
+  { flag: '🇧🇭', code: 'bh', name: 'Bahrain',        x: 61,  y: 42 },
+  { flag: '🇨🇭', code: 'ch', name: 'Switzerland',    x: 50,  y: 29 },
+  { flag: '🇪🇸', code: 'es', name: 'Spain',          x: 46,  y: 32 },
+  { flag: '🇻🇳', code: 'vn', name: 'Vietnam',        x: 78,  y: 46 },
+  { flag: '🇵🇭', code: 'ph', name: 'Philippines',    x: 81,  y: 47 },
+  { flag: '🇰🇪', code: 'ke', name: 'Kenya',          x: 58,  y: 55 },
 ]
 
 // India (origin) pin
-const ORIGIN = { name: 'Meerut, India', x: 68, y: 44 }
+const ORIGIN = { name: 'Meerut, Uttar Pradesh, India', x: 68, y: 44 }
 
 export default function GlobalReach() {
   return (
@@ -79,7 +85,7 @@ export default function GlobalReach() {
           </div>
 
           <div className="map-legend">
-            <span className="legend-item"><span className="legend-dot origin" /> Origin — Meerut, India</span>
+            <span className="legend-item"><span className="legend-dot origin" /> Origin — Meerut, Uttar Pradesh, India</span>
             <span className="legend-item"><span className="legend-dot export" /> Export Destination</span>
           </div>
         </div>
@@ -88,7 +94,14 @@ export default function GlobalReach() {
         <div className="country-grid">
           {EXPORT_COUNTRIES.map((c) => (
             <div className="country-card reveal-up" key={c.name}>
-              <span className="flag">{c.flag}</span>
+              <img
+                src={`https://flagcdn.com/w40/${c.code}.png`}
+                srcSet={`https://flagcdn.com/w80/${c.code}.png 2x`}
+                width="40"
+                height="27"
+                alt={`${c.name} flag`}
+                className="country-flag-img"
+              />
               <span>{c.name}</span>
             </div>
           ))}

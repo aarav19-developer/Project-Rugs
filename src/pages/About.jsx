@@ -6,14 +6,14 @@ const STATS = [
   { num: '30+',  label: 'Years in Business'     },
   { num: '500+', label: 'Designs in Portfolio'  },
   { num: '20+',  label: 'Countries Served'      },
-  { num: '100%', label: 'Handmade Products'     },
+  { num: '2',    label: 'ISO Certifications'    },
 ]
 
 const TIMELINE = [
-  { year: '1990s', title: 'The Beginning', desc: 'Deen Dayal Rugs Exports was founded as a small family weaving workshop in Meerut, UP — driven by a passion for traditional Indian carpet craftsmanship.' },
+  { year: '1990s', title: 'The Beginning', desc: 'Deen Dayal Rugs Export was founded as a small family weaving workshop in Meerut, Uttar Pradesh, India — driven by a passion for traditional Indian carpet craftsmanship.' },
   { year: '2000s', title: 'Growing the Craft', desc: 'Expanded the artisan team and diversified into multiple carpet types — hand-knotted, hand-tufted, and flat weave — catering to domestic and early export buyers.' },
   { year: '2010s', title: 'Going Global', desc: 'Established direct export relationships with buyers in the USA, UK, Germany, UAE, and Australia. Achieved compliance with international quality and safety standards.' },
-  { year: '2020s', title: 'Full Product Range', desc: 'Expanded beyond carpets into poufs, cushions, wall art, wall hangings, wooden stools, and benches — becoming a complete handmade lifestyle product exporter.' },
+  { year: '2020s', title: 'Full Product Range', desc: 'Expanded beyond carpets into poufs, cushions, wall art, wall hangings, wooden stools, and benches — becoming a complete handmade and machine-made lifestyle product exporter.' },
 ]
 
 const TEAM = [
@@ -24,7 +24,7 @@ const TEAM = [
 ]
 
 const VALUES = [
-  { icon: 'fa-solid fa-hand-sparkles', title: 'Craftsmanship First',   desc: 'Every product is made entirely by human hands. No machines, no shortcuts — just skill, patience, and pride.' },
+  { icon: 'fa-solid fa-hand-sparkles', title: 'Dual Craftsmanship',   desc: 'We create products both by skilled artisan hands and precision machinery — blending traditional character with consistent, scalable quality.' },
   { icon: 'fa-solid fa-leaf',          title: 'Sustainability',         desc: 'Natural fibres, eco-friendly azo-free dyes, and responsible sourcing — for a healthier planet and safer products.' },
   { icon: 'fa-solid fa-handshake',     title: 'Partnership',            desc: 'We build long-term relationships with both our artisans and our international buyers — built on trust and transparency.' },
   { icon: 'fa-solid fa-globe',         title: 'Global Standards',       desc: 'From quality inspection to export documentation, we meet the highest international compliance standards.' },
@@ -34,14 +34,14 @@ export default function About() {
   return (
     <>
       <PageMeta
-        title="About Us — Handmade Carpet Exporter from Meerut India | Deen Dayal Rugs Exports"
-        description="30+ years of handmade carpet craftsmanship. Deen Dayal Rugs Exports — a family-rooted exporter from Meerut, UP, India. Serving buyers in 20+ countries worldwide."
+        title="About Us — Carpet & Rug Exporter from Meerut India | Deen Dayal Rugs Export"
+        description="30+ years of carpet craftsmanship. Deen Dayal Rugs Export — a family-rooted exporter from Meerut, Uttar Pradesh, India. Handmade and machine-made products. Serving buyers in 20+ countries worldwide."
         canonical="https://www.deendayalrugs.com/about"
       />
       <PageHero
         eyebrow="Our Story"
         title="A Legacy Woven Thread by Thread"
-        desc="Born in Meerut, grown worldwide — the story of Deen Dayal Rugs Exports."
+        desc="Born in Meerut, grown worldwide — the story of Deen Dayal Rugs Export."
         bg="#3E4D28"
       />
 
@@ -66,19 +66,19 @@ export default function About() {
               <p className="section-eyebrow">Who We Are</p>
               <h2 className="section-title">Rooted in Meerut,<br /><em>Trusted Worldwide</em></h2>
               <p>
-                Deen Dayal Rugs Exports is a family-rooted export house born from the carpet
-                weaving heartland of <strong>Meerut, Uttar Pradesh</strong> — a region that has
+                Deen Dayal Rugs Export is a family-rooted export house born from the carpet
+                weaving heartland of <strong>Meerut, Uttar Pradesh, India</strong> — a region that has
                 shaped India's handmade carpet industry for centuries.
               </p>
               <p>
                 What began as a small workshop driven by passion for traditional craftsmanship
-                has grown into a trusted name in the global handmade textile and lifestyle
+                has grown into a trusted name in the global textile and lifestyle
                 product export market.
               </p>
               <p>
-                We work hand-in-hand with hundreds of skilled artisans who carry forward
-                weaving techniques passed down through generations. Every product that leaves
-                our factory is a testament to patience, precision, and pride.
+                We offer both artisan handmade and precision machine-made products — giving buyers
+                the choice of traditional character or consistent, scalable quality. Every product
+                that leaves our factory is a testament to skill, precision, and pride.
               </p>
               <div className="about-stats">
                 {STATS.map((s) => (
@@ -129,6 +129,76 @@ export default function About() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ISO CERTIFICATIONS ── */}
+      <section className="section-pad bg-sand">
+        <div className="container">
+          <div className="section-header reveal-up">
+            <p className="section-eyebrow">Internationally Recognised</p>
+            <h2 className="section-title">ISO Certified <em>Operations</em></h2>
+            <p className="section-desc">
+              Our commitment to quality and environmental responsibility is backed by two of the
+              world's most recognised international standards.
+            </p>
+          </div>
+
+          <div className="iso-grid">
+
+            <div className="iso-card reveal-up">
+              <div className="iso-badge">
+                <i className="fa-solid fa-certificate" />
+                <span>ISO 9001</span>
+              </div>
+              <h3>Quality Management System</h3>
+              <p>
+                ISO 9001 is the international standard for Quality Management Systems (QMS),
+                set by the International Organization for Standardization. It certifies that
+                an organisation consistently delivers products and services that meet customer
+                and regulatory requirements, while continuously improving its processes.
+              </p>
+              <p>
+                For Deen Dayal Rugs Export, this means every step of our production — from
+                raw material sourcing to final dispatch — follows documented, audited processes
+                designed to eliminate errors and ensure consistent product quality for our
+                international buyers.
+              </p>
+              <ul className="iso-points">
+                <li><i className="fa-solid fa-check" /> Consistent product quality across every order</li>
+                <li><i className="fa-solid fa-check" /> Documented production and inspection processes</li>
+                <li><i className="fa-solid fa-check" /> Customer satisfaction at the core of operations</li>
+                <li><i className="fa-solid fa-check" /> Continuous improvement of manufacturing standards</li>
+              </ul>
+            </div>
+
+            <div className="iso-card reveal-up" style={{ transitionDelay: '0.1s' }}>
+              <div className="iso-badge iso-badge--green">
+                <i className="fa-solid fa-leaf" />
+                <span>ISO 14001</span>
+              </div>
+              <h3>Environmental Management System</h3>
+              <p>
+                ISO 14001 is the international standard for Environmental Management Systems
+                (EMS). It certifies that an organisation has a structured framework to
+                minimise its environmental impact, comply with environmental laws, and
+                continually improve its environmental performance.
+              </p>
+              <p>
+                At Deen Dayal Rugs Export, this certification reflects our genuine commitment
+                to responsible manufacturing — using eco-friendly azo-free dyes, reducing
+                waste, managing water and energy consumption, and ensuring our products are
+                safe for both people and the planet.
+              </p>
+              <ul className="iso-points">
+                <li><i className="fa-solid fa-check" /> Eco-friendly azo-free dyes and natural fibres</li>
+                <li><i className="fa-solid fa-check" /> Responsible waste and water management</li>
+                <li><i className="fa-solid fa-check" /> Compliance with environmental regulations</li>
+                <li><i className="fa-solid fa-check" /> Reduced environmental footprint across production</li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>

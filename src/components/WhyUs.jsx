@@ -1,7 +1,7 @@
 import '../style/WhyUs.css'
 
 const CARDS = [
-  { icon: 'fa-hand-sparkles', title: '100% Handmade',          desc: 'Every carpet is made entirely by hand — no machines, no shortcuts. Pure human craftsmanship in every thread.' },
+  { icon: 'fa-hand-sparkles', title: 'Handmade & Machine-Made',   desc: 'We craft our products both by skilled artisan hands and precision machinery — giving you the perfect blend of traditional character and consistent quality.' },
   { icon: 'fa-certificate',   title: 'Export Quality Standards', desc: 'We meet international quality, safety, and compliance standards required by buyers in the USA, EU, UK, and beyond.' },
   { icon: 'fa-ruler-combined',title: 'Custom Sizing Available', desc: 'From small accent rugs to grand hall carpets — we produce any dimension with precision to fit your exact project needs.' },
   { icon: 'fa-hourglass-half',title: 'Decades of Craftsmanship',desc: 'Over 30 years of experience in handmade carpet manufacturing, with deep mastery of traditional Indian weaving techniques.' },

@@ -9,7 +9,7 @@ const COUNTERS = [
 ]
 
 const FACT_CARDS = [
-  { icon: 'fa-clock',           title: 'Months in the Making',   body: 'A single hand-knotted carpet of medium size can take 3 to 12 months to complete — each knot tied individually by skilled hands.' },
+  { icon: 'fa-clock',           title: 'Precision at Every Step',  body: 'Every carpet and textile product undergoes rigorous quality checks — from fibre selection and dyeing to weaving and final finishing — ensuring consistent excellence in every piece.' },
   { icon: 'fa-infinity',        title: 'Million Knots, One Carpet', body: 'A high-quality hand-knotted carpet can contain over 1 million individual knots per square metre — every single one tied manually.' },
   { icon: 'fa-landmark',        title: 'A 500-Year Heritage',    body: 'Carpet weaving in India dates back over 500 years to the Mughal era, when Persian artisans brought the craft that evolved into India\'s unique weaving traditions.' },
   { icon: 'fa-indian-rupee-sign',title: 'Billion-Dollar Industry', body: 'India\'s handmade carpet export industry is worth over USD 1.4 billion annually, supporting millions of families in rural and semi-urban Uttar Pradesh.' },

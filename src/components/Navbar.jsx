@@ -62,7 +62,7 @@ export default function Navbar() {
           <div className="nav-logo-img-wrap">
             <img
               src="/logo1.jpeg"
-              alt="Deen Dayal Rugs Exports logo"
+              alt="Deen Dayal Rugs Export logo"
               className="logo-img-only"
               width="48"
               height="48"
@@ -70,7 +70,7 @@ export default function Navbar() {
           </div>
           <div className="logo-text-wrap">
             <span className="logo-main">Deen Dayal</span>
-            <span className="logo-sub">Rugs Exports</span>
+            <span className="logo-sub">Rugs Export</span>
           </div>
         </Link>
 

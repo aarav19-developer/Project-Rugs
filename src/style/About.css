@@ -107,3 +107,92 @@
   .about-badge  { right: 12px; bottom: 12px; padding: 14px 18px; }
   .about-stats  { flex-wrap: wrap; gap: 1.5rem; }
 }
+
+/* ── ISO Certifications ── */
+.iso-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.iso-card {
+  background: var(--cream);
+  border: 1px solid var(--sand-dark);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.iso-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.iso-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--olive);
+  color: var(--cream);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.iso-badge i { font-size: 1rem; }
+
+.iso-badge--green {
+  background: #2E6B4F;
+}
+
+.iso-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--brown-dark);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.iso-card p {
+  color: var(--text-mid);
+  font-size: 0.94rem;
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+
+.iso-points {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid var(--sand-dark);
+  padding-top: 20px;
+}
+
+.iso-points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+
+.iso-points li i {
+  color: var(--olive);
+  font-size: 0.75rem;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .iso-grid { grid-template-columns: 1fr; }
+}
