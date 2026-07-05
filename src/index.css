@@ -3154,6 +3154,31 @@ section {
   }
 }
 
+/* ── TEAM SECTION MOBILE ── */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .team-card {
+    padding: 28px 16px;
+  }
+
+  .team-avatar {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .team-card span {
+    font-size: 0.7rem;
+  }
+}
+
 /* ── HOME PAGE MOBILE ── */
 @media (max-width: 768px) {
   .highlights-grid {
@@ -3304,8 +3329,18 @@ section {
     grid-template-columns: 1fr;
   }
 
+  /* Team — 1 column on small phones, avatar smaller */
   .team-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+  }
+
+  .team-card {
+    padding: 28px 20px;
+  }
+
+  .team-avatar {
+    width: 120px;
+    height: 120px;
   }
 
   .page-cta-inner {
@@ -3317,6 +3352,55 @@ section {
   .btn-outline {
     padding: 12px 20px;
     font-size: 0.78rem;
+  }
+
+  /* Facts counters — 1 column on very small phones */
+  .facts-counters {
+    grid-template-columns: 1fr 1fr;
+    padding: 24px 16px;
+    gap: 12px;
+  }
+
+  .counter-item:not(:last-child)::after {
+    display: none;
+  }
+
+  /* Highlights — keep 2 col but reduce padding */
+  .highlight-item {
+    padding: 12px 8px;
+  }
+
+  .highlight-num {
+    font-size: 1.8rem;
+  }
+
+  /* Process icon block smaller */
+  .process-page-icon-block {
+    height: 180px;
+  }
+
+  /* Section title smaller */
+  .section-title {
+    font-size: clamp(1.4rem, 5.5vw, 2rem);
+  }
+
+  /* Preview cards gap */
+  .preview-grid {
+    gap: 12px;
+  }
+
+  /* Product cards */
+  .product-card {
+    border-radius: var(--radius-md);
+  }
+
+  /* Form padding */
+  .enquiry-form {
+    padding: 24px 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }
 

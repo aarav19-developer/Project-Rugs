@@ -92,6 +92,13 @@
 .stat-num sup { font-size: 1rem; vertical-align: super; }
 .stat-label { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-light); }
 
+/* ── Values grid ── */
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
 @media (max-width: 1024px) {
   .about-grid   { grid-template-columns: 1fr; gap: 60px; }
   .about-badge  { right: 16px; bottom: 16px; }
@@ -99,6 +106,7 @@
   .animation-placeholder { height: 420px; }
   .about-text   { padding-right: 0; }
   .img-frame::before, .img-frame::after { display: none; }
+  .values-grid  { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -106,6 +114,22 @@
   .animation-placeholder { height: 300px; }
   .about-badge  { right: 12px; bottom: 12px; padding: 14px 18px; }
   .about-stats  { flex-wrap: wrap; gap: 1.5rem; }
+  .values-grid  { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .about-grid   { gap: 32px; }
+  .img-frame img,
+  .animation-placeholder { height: 240px; }
+  .about-badge  {
+    right: 8px;
+    bottom: 8px;
+    padding: 10px 14px;
+  }
+  .badge-num    { font-size: 1.8rem; }
+  .about-stats  { gap: 1rem; }
+  .stat-num     { font-size: 1.6rem; }
+  .values-grid  { grid-template-columns: 1fr; }
 }
 
 /* ── ISO Certifications ── */

@@ -35,41 +35,36 @@
   flex-shrink: 0;
 }
 
-/* Image wrapper — background matches navbar exactly, no separate box visible */
+/* Image wrapper */
 .nav-logo-img-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* Dark/transparent navbar: same as navbar = transparent */
   background: transparent;
   border-radius: 6px;
-  padding: 3px;
+  padding: 0;
   flex-shrink: 0;
   transition: background 0.35s ease;
 }
 
-/* Scrolled: white cream bg — same as navbar scrolled background */
 .navbar.scrolled .nav-logo-img-wrap {
-  background: rgba(250, 246, 239, 0.97);
+  background: transparent;
 }
 
 /* Logo image */
 .logo-img-only {
-  width: 44px;
-  height: 44px;
-  object-fit: cover;
-  object-position: center top;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  object-position: center;
   display: block;
   border-radius: 4px;
-  /* Dark navbar: image has white/light bg — blend it away with mix-blend-mode */
-  mix-blend-mode: screen;
-  transition: mix-blend-mode 0.35s ease, filter 0.35s ease;
+  transition: opacity 0.35s ease;
 }
 
-/* Scrolled: restore normal rendering on white/cream background */
+/* Scrolled: no change needed for transparent logo */
 .navbar.scrolled .logo-img-only {
-  mix-blend-mode: normal;
-  filter: none;
+  opacity: 1;
 }
 
 /* Brand text next to logo */
@@ -104,13 +99,13 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .nav-logo { gap: 8px; }
-  .logo-img-only { width: 36px; height: 36px; }
+  .logo-img-only { width: 46px; height: 46px; }
   .logo-main { font-size: 1.15rem; }
   .logo-sub  { font-size: 0.55rem; }
 }
 
 @media (max-width: 400px) {
-  .logo-img-only { width: 32px; height: 32px; }
+  .logo-img-only { width: 38px; height: 38px; }
   .logo-main { font-size: 1rem; }
 }
 

@@ -13,22 +13,22 @@
   margin-bottom: 20px;
 }
 
-/* Cream wrapper so black logo shows on dark footer */
+/* Transparent logo — no wrapper needed on dark footer */
 .footer-logo-img-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(250, 246, 239, 0.90);
+  background: transparent;
   border-radius: 8px;
-  padding: 4px;
+  padding: 0;
   flex-shrink: 0;
 }
 
 .footer-logo-img-only {
-  width: 44px;
-  height: 44px;
-  object-fit: cover;
-  object-position: center top;
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  object-position: center;
   display: block;
   border-radius: 4px;
 }
