@@ -17,8 +17,8 @@ const TIMELINE = [
 ]
 
 const TEAM = [
-  { name: 'Founder & Director',    role: 'Operations & Vision',     img: null },
-  { name: 'Export Manager',        role: 'International Relations',  img: null },
+  { name: 'Founder & Director',    role: 'Operations & Vision',     img: '/Founder.png' },
+  { name: 'Export Manager',        role: 'International Relations',  img: '/Export manager.png' },
   { name: 'Head of Design',        role: 'Product Development',      img: null },
   { name: 'Quality Control Lead',  role: 'Standards & Compliance',   img: null },
 ]
@@ -230,8 +230,10 @@ export default function About() {
             {TEAM.map((m) => (
               <div className="team-card reveal-up" key={m.name}>
                 <div className="team-avatar">
-                  {/* TODO: Replace with actual team member photo */}
-                  <i className="fa-solid fa-user" />
+                  {m.img
+                    ? <img src={m.img} alt={m.name} width="120" height="120" loading="lazy" />
+                    : <i className="fa-solid fa-user" />
+                  }
                 </div>
                 <h3>{m.name}</h3>
                 <span>{m.role}</span>

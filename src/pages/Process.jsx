@@ -7,6 +7,7 @@ const STEPS = [
     num: '01',
     icon: 'fa-solid fa-seedling',
     title: 'Raw Material Selection',
+    img: '/Raw Material.png',
     desc: 'We source only the finest wool, silk, cotton, and jute from trusted suppliers across India. Every fibre is inspected for purity, strength, and dyeability before entering our workshop.',
     detail: 'Our sourcing team visits farms and cooperatives directly to ensure the quality and traceability of all raw materials. We prioritise natural, sustainably harvested fibres.',
     bg: '#5C6B3A',
@@ -15,6 +16,7 @@ const STEPS = [
     num: '02',
     icon: 'fa-solid fa-palette',
     title: 'Dyeing & Colour Preparation',
+    img: null,
     desc: 'Yarns are dyed using eco-friendly, azo-free dyes to ensure rich, lasting colour. Our dye masters blend traditional recipes with modern colour accuracy.',
     detail: 'All dyes meet international safety standards including REACH and Oeko-Tex. Colour fastness is tested before production begins to ensure long-lasting vibrancy.',
     bg: '#B8922A',
@@ -23,6 +25,7 @@ const STEPS = [
     num: '03',
     icon: 'fa-solid fa-hands',
     title: 'Weaving & Knotting by Hand',
+    img: null,
     desc: 'Master weavers work on traditional looms, tying hundreds of thousands of individual knots — each placed by skilled hands following age-old techniques unique to the Meerut, Uttar Pradesh, India region.',
     detail: 'A single square metre of hand-knotted carpet can take weeks to complete. Our weavers follow detailed design charts while maintaining complete creative fidelity to the original pattern.',
     bg: '#A07850',
@@ -31,6 +34,7 @@ const STEPS = [
     num: '04',
     icon: 'fa-solid fa-droplet',
     title: 'Washing & Finishing',
+    img: null,
     desc: 'Freshly woven carpets undergo deep washing to bring out natural lustre and softness. Finishing includes stretching, clipping, and pile levelling for a perfect surface.',
     detail: 'Washing removes excess dye and natural lanolin, enhancing the texture and brightness. Each piece is then hand-clipped and stretched on frames to perfect its dimensions.',
     bg: '#3E4D28',
@@ -39,6 +43,7 @@ const STEPS = [
     num: '05',
     icon: 'fa-solid fa-magnifying-glass',
     title: 'Quality Inspection',
+    img: null,
     desc: 'Every product is inspected against international quality standards — checking knot density, pile height, colour fastness, dimensional accuracy, and structural integrity.',
     detail: 'Our QC process includes both visual inspection and physical testing. Products that do not meet our standards are returned for correction before re-inspection.',
     bg: '#6B4F2E',
@@ -47,6 +52,7 @@ const STEPS = [
     num: '06',
     icon: 'fa-solid fa-box-open',
     title: 'Packaging & Export',
+    img: null,
     desc: 'Approved products are carefully rolled or folded, wrapped in protective materials, and packed for safe international shipping.',
     detail: 'We provide full export documentation including commercial invoice, packing list, certificate of origin, and GST/GSP certificates. We work with all major freight forwarders.',
     bg: '#7A6B55',
@@ -117,7 +123,10 @@ export default function Process() {
             <div className={`process-page-grid${i % 2 !== 0 ? ' reverse' : ''}`}>
               <div className={i % 2 !== 0 ? 'reveal-right' : 'reveal-left'}>
                 <div className="process-page-icon-block" style={{ background: s.bg }}>
-                  <i className={s.icon} />
+                  {s.img
+                    ? <img src={s.img} alt={s.title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }} />
+                    : <i className={s.icon} />
+                  }
                   <span className="process-page-num">{s.num}</span>
                 </div>
               </div>

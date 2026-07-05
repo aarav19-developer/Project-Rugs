@@ -66,14 +66,19 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TODO: Replace with your Web3Forms key from web3forms.com
+          access_key: '639d1f43-d34b-41e7-9219-56411e5e3559',
           subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Export`,
-          from_name: form.fullName,
+          from_name: 'Deen Dayal Rugs Export',
           email: form.email,
           phone: form.phone,
           country: form.country,
           product_interest: form.productInterest,
           message: form.message || 'No message provided.',
+          // Auto-reply to client
+          replyto: form.email,
+          autoresponse: true,
+          autoresponse_subject: 'Thank you for your enquiry — Deen Dayal Rugs Export',
+          autoresponse_message: `Dear ${form.fullName},\n\nThank you for reaching out to Deen Dayal Rugs Export.\n\nWe have received your enquiry regarding "${form.productInterest}" and our export team will get back to you within 24 hours.\n\nIf you need immediate assistance, feel free to WhatsApp us at +91 96271 11136.\n\nWarm regards,\nDeen Dayal Rugs Export\nMeerut, Uttar Pradesh, India\nwww.deendayalrugs.com`,
         }),
       })
       const data = await res.json()
