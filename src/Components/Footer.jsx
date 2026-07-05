@@ -41,7 +41,7 @@ export default function Footer() {
               <div className="footer-logo">
                 <div className="footer-logo-img-wrap">
                   <img
-                    src="/logo1.jpeg"
+                    src="/logo.png"
                     alt="Deen Dayal Rugs Export logo"
                     className="footer-logo-img-only"
                     width="48"

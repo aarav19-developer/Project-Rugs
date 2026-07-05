@@ -61,7 +61,7 @@ export default function Navbar() {
         <Link to="/" className="nav-logo" onClick={close}>
           <div className="nav-logo-img-wrap">
             <img
-              src="/logo1.jpeg"
+              src="/logo.png"
               alt="Deen Dayal Rugs Export logo"
               className="logo-img-only"
               width="48"

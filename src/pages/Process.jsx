@@ -7,7 +7,7 @@ const STEPS = [
     num: '01',
     icon: 'fa-solid fa-seedling',
     title: 'Raw Material Selection',
-    img: '/raw-material.png',
+    img: '/raw-material.webp',
     desc: 'We source only the finest wool, silk, cotton, and jute from trusted suppliers across India. Every fibre is inspected for purity, strength, and dyeability before entering our workshop.',
     detail: 'Our sourcing team visits farms and cooperatives directly to ensure the quality and traceability of all raw materials. We prioritise natural, sustainably harvested fibres.',
     bg: '#5C6B3A',
@@ -123,10 +123,14 @@ export default function Process() {
             <div className={`process-page-grid${i % 2 !== 0 ? ' reverse' : ''}`}>
               <div className={i % 2 !== 0 ? 'reveal-right' : 'reveal-left'}>
                 <div className="process-page-icon-block" style={{ background: s.bg }}>
-                  {s.img
-                    ? <img src={s.img} alt={s.title} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }} />
-                    : <i className={s.icon} />
-                  }
+                  {s.img && (
+                    <img
+                      src={s.img}
+                      alt={s.title}
+                      loading="lazy"
+                    />
+                  )}
+                  {!s.img && <i className={s.icon} />}
                   <span className="process-page-num">{s.num}</span>
                 </div>
               </div>

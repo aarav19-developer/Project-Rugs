@@ -2579,11 +2579,25 @@ button {
   gap: 16px;
   position: relative;
   box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.process-page-icon-block img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: var(--radius-xl);
+  z-index: 0;
 }
 
 .process-page-icon-block i {
   font-size: 4rem;
   color: rgba(255,255,255,0.85);
+  position: relative;
+  z-index: 1;
 }
 
 .process-page-num {
