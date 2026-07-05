@@ -17,8 +17,8 @@ const TIMELINE = [
 ]
 
 const TEAM = [
-  { name: 'Founder & Director',    role: 'Operations & Vision',     img: '/Founder.png' },
-  { name: 'Export Manager',        role: 'International Relations',  img: '/Export manager.png' },
+  { name: 'Founder & Director',    role: 'Operations & Vision',     img: '/founder.png' },
+  { name: 'Export Manager',        role: 'International Relations',  img: '/export-manager.png' },
   { name: 'Head of Design',        role: 'Product Development',      img: null },
   { name: 'Quality Control Lead',  role: 'Standards & Compliance',   img: null },
 ]

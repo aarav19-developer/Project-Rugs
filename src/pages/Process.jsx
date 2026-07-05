@@ -7,7 +7,7 @@ const STEPS = [
     num: '01',
     icon: 'fa-solid fa-seedling',
     title: 'Raw Material Selection',
-    img: '/Raw Material.png',
+    img: '/raw-material.png',
     desc: 'We source only the finest wool, silk, cotton, and jute from trusted suppliers across India. Every fibre is inspected for purity, strength, and dyeability before entering our workshop.',
     detail: 'Our sourcing team visits farms and cooperatives directly to ensure the quality and traceability of all raw materials. We prioritise natural, sustainably harvested fibres.',
     bg: '#5C6B3A',
