@@ -7,7 +7,6 @@ import ImageSlider from '../Components/ImageSlider'
 /* Hero images */
 const HERO_IMAGES = [
   { src: '/HeroSection/h1.webp', alt: 'Handmade carpets by Deen Dayal Rugs Exports' },
-  { src: '/HeroSection/h2.webp', alt: 'Premium rugs crafted in Meerut, India' },
 ]
 
 /* Quick-preview cards shown on the Home page */
@@ -119,8 +118,7 @@ export default function Home() {
           </p>
           <h1 className="hero-title">
             Deen Dayal<br />
-            <span>Rugs Export</span>
-          </h1>
+            <span>Rugs Exports</span>          </h1>
           <p className="hero-tagline">RESPONSIBILITY | RELIABILITY | TRANSPARENCY</p>
           <p className="hero-desc">
             Weaving generations of tradition into every knot — premium handmade carpets and
@@ -203,7 +201,7 @@ export default function Home() {
           <div className="section-header reveal-up">
             <p className="section-eyebrow">Everything We Offer</p>
             <h2 className="section-title">
-              Explore Deen Dayal<br /><em>Rugs Export</em>
+              Explore Deen Dayal<br /><em>Rugs Exports</em>
             </h2>
             <p className="section-desc">
               Navigate through our pages to discover the full story, product range,

@@ -190,6 +190,21 @@ export default function WhyUs() {
       {/* ── OUR BOND WITH CLIENTS ── */}
       <section className="section-pad bg-sand">
         <div className="container">
+
+          {/* Decorative divider */}
+          <div className="reveal-up" style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '20px',
+            marginBottom: '64px',
+          }}>
+            <div style={{ flex: 1, height: '1px', background: 'var(--sand-deeper)' }} />
+            <i className="fa-solid fa-star" style={{ color: 'var(--olive-light)', fontSize: '0.7rem' }} />
+            <i className="fa-solid fa-star" style={{ color: 'var(--olive)', fontSize: '0.9rem' }} />
+            <i className="fa-solid fa-star" style={{ color: 'var(--olive-light)', fontSize: '0.7rem' }} />
+            <div style={{ flex: 1, height: '1px', background: 'var(--sand-deeper)' }} />
+          </div>
+
           <div className="section-header reveal-up">
             <p className="section-eyebrow">Our Relationships</p>
             <h2 className="section-title">Our Bond With<br /><em>Our Clients</em></h2>

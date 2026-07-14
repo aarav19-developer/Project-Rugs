@@ -24,7 +24,7 @@ export default function Hero() {
 
         <h1 className="hero-title">
           Deen Dayal<br />
-          <span>Rugs Export</span>
+          <span>Rugs Exports</span>
         </h1>
 
         <p className="hero-tagline">Crafted by Hand, Loved Worldwide</p>

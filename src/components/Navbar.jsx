@@ -70,7 +70,7 @@ export default function Navbar() {
           </div>
           <div className="logo-text-wrap">
             <span className="logo-main">Deen Dayal</span>
-            <span className="logo-sub">Rugs Export</span>
+            <span className="logo-sub">Rugs Exports</span>
           </div>
         </Link>
 

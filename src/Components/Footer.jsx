@@ -48,7 +48,7 @@ export default function Footer() {
                 </div>
                 <div className="footer-logo-text">
                   <span className="logo-main">Deen Dayal</span>
-                  <span className="logo-sub">Rugs Export</span>
+                  <span className="logo-sub">Rugs Exports</span>
                 </div>
               </div>
               <p>Crafting premium handmade &amp; machine-made rugs and textiles — exported with pride from Meerut, Uttar Pradesh, India.</p>
