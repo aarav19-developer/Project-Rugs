@@ -1,6 +1,14 @@
+﻿import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import MarqueeStrip from '../Components/MarqueeStrip'
 import PageMeta from '../Components/PageMeta'
+import ImageSlider from '../Components/ImageSlider'
+
+/* Hero images */
+const HERO_IMAGES = [
+  { src: '/HeroSection/h1.webp', alt: 'Handmade carpets by Deen Dayal Rugs Exports' },
+  { src: '/HeroSection/h2.webp', alt: 'Premium rugs crafted in Meerut, India' },
+]
 
 /* Quick-preview cards shown on the Home page */
 const PREVIEWS = [
@@ -56,10 +64,18 @@ const HIGHLIGHTS = [
 ]
 
 export default function Home() {
+  const [heroIdx, setHeroIdx] = useState(0)
+
+  useEffect(() => {
+    const t = setInterval(() => {
+      setHeroIdx(i => (i + 1) % HERO_IMAGES.length)
+    }, 5000)
+    return () => clearInterval(t)
+  }, [])
   return (
     <>
       <PageMeta
-        title="Handmade & Machine-Made Rugs &amp; Carpet Exporter from Meerut India | Deen Dayal Rugs Export"
+        title="Handmade & Machine-Made Rugs &amp; Carpet Exporter from Meerut India | Deen Dayal Rugs Exports"
         description="Premium handmade and machine-made carpets, rugs, poufs and home textiles crafted in Meerut, Uttar Pradesh, India. Trusted exporter to 20+ countries worldwide. Request a sample today."
         canonical="https://www.deendayalrugs.com/"
         jsonLd={{
@@ -67,7 +83,7 @@ export default function Home() {
           "@type": "WebPage",
           "@id": "https://www.deendayalrugs.com/#webpage",
           "url": "https://www.deendayalrugs.com/",
-          "name": "Handmade & Machine-Made Rugs & Carpet Exporter from Meerut India | Deen Dayal Rugs Export",
+          "name": "Handmade & Machine-Made Rugs & Carpet Exporter from Meerut India | Deen Dayal Rugs Exports",
           "description": "Premium handmade and machine-made carpets, rugs, poufs and home textiles crafted in Meerut, Uttar Pradesh, India. Trusted exporter to 20+ countries worldwide.",
           "isPartOf": { "@id": "https://www.deendayalrugs.com/#website" },
           "about": { "@id": "https://www.deendayalrugs.com/#organization" },
@@ -82,13 +98,17 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero" id="home">
         <div className="hero-bg">
-          {/*
-            TODO: Replace with your actual hero image.
-            Use a portrait/square crop for mobile (e.g. 800x1000px)
-            and a landscape for desktop (e.g. 1920x1080px).
-            For now using a CSS background so it scales correctly on all screens.
-          */}
-          <div className="hero-bg-fill" />
+          <div className="hero-slides">
+            {HERO_IMAGES.map((img, i) => (
+              <img
+                key={img.src}
+                src={img.src}
+                alt={img.alt}
+                className={`hero-slide-img${i === heroIdx ? ' hero-slide-active' : ''}`}
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            ))}
+          </div>
           <div className="hero-overlay" />
         </div>
 
@@ -141,7 +161,7 @@ export default function Home() {
         <div className="container">
           <div className="home-intro-grid">
             <div className="home-intro-text reveal-left">
-              <p className="section-eyebrow">Welcome to Deen Dayal Rugs Export</p>
+              <p className="section-eyebrow">Welcome to Deen Dayal Rugs Exports</p>
               <h2 className="section-title">
                 A Legacy Woven<br /><em>Thread by Thread</em>
               </h2>
@@ -161,10 +181,12 @@ export default function Home() {
               </div>
             </div>
             <div className="home-intro-img reveal-right">
-              {/* TODO: Replace with actual artisan/workshop photo */}
-              <div className="home-img-placeholder">
-                <i className="fa-solid fa-hands" />
-                <span>Artisan at work — add your photo here</span>
+              <div className="video-placeholder">
+                <div className="video-placeholder-icon">
+                  <i className="fa-solid fa-play" />
+                </div>
+                <p className="video-placeholder-title">Skilled Artisan at Work</p>
+                <span className="video-placeholder-note">📹 Add artisan weaving video here</span>
               </div>
               <div className="home-intro-badge">
                 <span className="badge-num">30<sup>+</sup></span>
@@ -222,23 +244,22 @@ export default function Home() {
           </div>
           <div className="teaser-grid">
             {[
-              { name: 'Carpets',        bg: '#A89070', icon: 'fa-solid fa-grip'        },
-              { name: 'Poufs',          bg: '#8B7355', icon: 'fa-solid fa-circle'       },
-              { name: 'Cushions',       bg: '#C4A882', icon: 'fa-solid fa-square'       },
-              { name: 'Wall Art',       bg: '#7A6B55', icon: 'fa-solid fa-image'        },
-              { name: 'Wall Hangings',  bg: '#B8A898', icon: 'fa-solid fa-panorama'     },
-              { name: 'Wooden Stools',  bg: '#6B5A3E', icon: 'fa-solid fa-chair'        },
-              { name: 'Benches',        bg: '#6B7C4A', icon: 'fa-solid fa-couch'        },
+              { name: 'Carpets',        img: '/Product/Carpet/c1.webp',          to: '/products#carpets'       },
+              { name: 'Poufs',          img: '/Product/Poufs/p1.webp',           to: '/products#poufs'         },
+              { name: 'Cushions',       img: '/Product/Cushion/cu1.webp',        to: '/products#cushions'      },
+              { name: 'Wall Art',       img: '/Product/WallArt/wa1.webp',        to: '/products#wall-art'      },
+              { name: 'Wall Hangings',  img: '/Product/WallHanging/wh1.webp',   to: '/products#wall-hanging'  },
+              { name: 'Wooden Stools',  img: '/Product/WoodenStool/ws1.webp',   to: '/products#stool-wood'    },
+              { name: 'Benches',        img: '/Product/Benches/b1.jpeg',         to: '/products#benches'       },
             ].map((p, i) => (
               <Link
-                to="/products"
+                to={p.to}
                 key={p.name}
                 className="teaser-card reveal-up"
                 style={{ transitionDelay: `${(i % 4) * 0.08}s` }}
               >
-                <div className="teaser-img" style={{ background: p.bg }}>
-                  <i className={p.icon} />
-                  {/* TODO: Replace with actual product image */}
+                <div className="teaser-img">
+                  <img src={p.img} alt={p.name} loading="lazy" />
                 </div>
                 <span>{p.name}</span>
               </Link>

@@ -136,22 +136,39 @@
 .iso-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 48px;
   margin-top: 48px;
 }
 
 .iso-card {
-  background: var(--cream);
+  background: var(--white);
   border: 1px solid var(--sand-dark);
-  border-radius: var(--radius-lg);
-  padding: 36px 32px;
-  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-xl);
+  padding: 44px 40px;
+  box-shadow: var(--shadow-md);
   transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.iso-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--olive);
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.iso-card:nth-child(2)::before {
+  background: #2E6B4F;
 }
 
 .iso-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
 }
 
 .iso-badge {

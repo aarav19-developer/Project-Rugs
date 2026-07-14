@@ -1,10 +1,7 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import '../style/Footer.css'
 
-// TODO: Replace each href with your actual social media profile URL
 const SOCIALS = [
-  { icon: 'fa-brands fa-instagram',  href: 'https://www.instagram.com/deendayalrugs',          label: 'Follow Deen Dayal Rugs Export on Instagram' },
-  { icon: 'fa-brands fa-facebook-f', href: 'https://www.facebook.com/deendayalrugs',            label: 'Follow Deen Dayal Rugs Export on Facebook'  },
   { icon: 'fa-brands fa-linkedin-in', href: 'https://www.linkedin.com/company/deen-dayal-rugs-exports', label: 'Connect on LinkedIn' },
 ]
 
@@ -42,7 +39,7 @@ export default function Footer() {
                 <div className="footer-logo-img-wrap">
                   <img
                     src="/logo.png"
-                    alt="Deen Dayal Rugs Export logo"
+                    alt="Deen Dayal Rugs Exports logo"
                     className="footer-logo-img-only"
                     width="48"
                     height="48"
@@ -59,6 +56,7 @@ export default function Footer() {
                 {SOCIALS.map((s) => (
                   <a key={s.label} href={s.href} target="_blank" rel="noopener noreferrer" aria-label={s.label}>
                     <i className={s.icon} aria-hidden="true" />
+                    <span>LinkedIn</span>
                   </a>
                 ))}
               </div>
@@ -90,7 +88,7 @@ export default function Footer() {
               <ul className="contact-list">
                 <li>
                   <i className="fa-solid fa-location-dot" />
-                  <span>Deen Dayal Rugs Export,<br />{CONTACT.address}</span>
+                  <span>Deen Dayal Rugs Exports,<br />{CONTACT.address}</span>
                 </li>
                 <li>
                   <i className="fa-solid fa-phone" />
@@ -102,7 +100,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <i className="fa-brands fa-whatsapp" aria-hidden="true" />
-                  <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with Deen Dayal Rugs Export on WhatsApp">
+                  <a href={`https://wa.me/${CONTACT.whatsapp}`} target="_blank" rel="noopener noreferrer" aria-label="Chat with Deen Dayal Rugs Exports on WhatsApp">
                     Chat on WhatsApp
                   </a>
                 </li>
@@ -115,7 +113,7 @@ export default function Footer() {
 
       <div className="footer-bottom">
         <div className="container">
-          <p>&copy; {new Date().getFullYear()} Deen Dayal Rugs Export. All rights reserved. &nbsp;|&nbsp; Meerut, Uttar Pradesh, India</p>
+          <p>&copy; {new Date().getFullYear()} Deen Dayal Rugs Exports. All rights reserved. &nbsp;|&nbsp; Meerut, Uttar Pradesh, India</p>
           <p className="footer-tagline">Crafted by Hand, Loved Worldwide ✦</p>
         </div>
       </div>

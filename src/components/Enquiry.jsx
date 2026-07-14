@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import '../style/Enquiry.css'
 
 const WHATSAPP_NUMBER = '919627111136'
@@ -65,7 +65,7 @@ export default function Enquiry() {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           access_key: 'YOUR_WEB3FORMS_ACCESS_KEY', // TODO: Replace — get free key at web3forms.com
-          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Export`,
+          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Exports`,
           from_name: form.fullName,
           email: form.email,
           phone: form.phone,
@@ -111,10 +111,10 @@ export default function Enquiry() {
             </ul>
 
             <div className="enquiry-contact-quick">
-              <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I visited your website and I'm interested in your carpet and rug products. Could you please share more details about your product range, pricing, and export options? Thank you.")}`} target="_blank" rel="noopener noreferrer" className="quick-wa" aria-label="Chat with Deen Dayal Rugs Export on WhatsApp">
+              <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello, I visited your website and I'm interested in your carpet and rug products. Could you please share more details about your product range, pricing, and export options? Thank you.")}`} target="_blank" rel="noopener noreferrer" className="quick-wa" aria-label="Chat with Deen Dayal Rugs Exports on WhatsApp">
                 <i className="fa-brands fa-whatsapp" aria-hidden="true" /> Chat on WhatsApp
               </a>
-              <a href={`mailto:${BUSINESS_EMAIL}`} className="quick-mail" aria-label="Email Deen Dayal Rugs Export">
+              <a href={`mailto:${BUSINESS_EMAIL}`} className="quick-mail" aria-label="Email Deen Dayal Rugs Exports">
                 <i className="fa-solid fa-envelope" aria-hidden="true" /> {BUSINESS_EMAIL}
               </a>
             </div>

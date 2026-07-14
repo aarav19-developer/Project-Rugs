@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
 import PageMeta from '../Components/PageMeta'
 
@@ -7,7 +7,7 @@ const STEPS = [
     num: '01',
     icon: 'fa-solid fa-seedling',
     title: 'Raw Material Selection',
-    img: '/raw-material.webp',
+    img: '/Process/raw-material.webp',
     desc: 'We source only the finest wool, silk, cotton, and jute from trusted suppliers across India. Every fibre is inspected for purity, strength, and dyeability before entering our workshop.',
     detail: 'Our sourcing team visits farms and cooperatives directly to ensure the quality and traceability of all raw materials. We prioritise natural, sustainably harvested fibres.',
     bg: '#5C6B3A',
@@ -26,6 +26,7 @@ const STEPS = [
     icon: 'fa-solid fa-hands',
     title: 'Weaving & Knotting by Hand',
     img: null,
+    isVideoSlot: true,
     desc: 'Master weavers work on traditional looms, tying hundreds of thousands of individual knots — each placed by skilled hands following age-old techniques unique to the Meerut, Uttar Pradesh, India region.',
     detail: 'A single square metre of hand-knotted carpet can take weeks to complete. Our weavers follow detailed design charts while maintaining complete creative fidelity to the original pattern.',
     bg: '#A07850',
@@ -70,7 +71,7 @@ export default function Process() {
   return (
     <>
       <PageMeta
-        title="Our Manufacturing Process — Carpets & Rugs | Deen Dayal Rugs Export"
+        title="Our Manufacturing Process — Carpets & Rugs | Deen Dayal Rugs Exports"
         description="From raw material selection to export packaging — 6 stages of precision craftsmanship. Eco-friendly dyes, hand-knotted and machine weaving, quality inspection and worldwide shipping."
         canonical="https://www.deendayalrugs.com/process"
         jsonLd={{
@@ -78,7 +79,7 @@ export default function Process() {
           "@type": "WebPage",
           "@id": "https://www.deendayalrugs.com/process#webpage",
           "url": "https://www.deendayalrugs.com/process",
-          "name": "Carpet & Rug Manufacturing Process — Deen Dayal Rugs Export",
+          "name": "Carpet & Rug Manufacturing Process — Deen Dayal Rugs Exports",
           "description": "6-stage carpet manufacturing process: raw material selection, eco-friendly dyeing, hand-knotting, washing, quality inspection and export packaging.",
           "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -123,14 +124,17 @@ export default function Process() {
             <div className={`process-page-grid${i % 2 !== 0 ? ' reverse' : ''}`}>
               <div className={i % 2 !== 0 ? 'reveal-right' : 'reveal-left'}>
                 <div className="process-page-icon-block" style={{ background: s.bg }}>
-                  {s.img && (
-                    <img
-                      src={s.img}
-                      alt={s.title}
-                      loading="lazy"
-                    />
+                  {s.isVideoSlot ? (
+                    <div className="video-placeholder-inline">
+                      <i className="fa-solid fa-play" />
+                      <p>Weaving in Action</p>
+                      <span>📹 Add weaving video here</span>
+                    </div>
+                  ) : s.img ? (
+                    <img src={s.img} alt={s.title} loading="lazy" />
+                  ) : (
+                    <i className={s.icon} />
                   )}
-                  {!s.img && <i className={s.icon} />}
                   <span className="process-page-num">{s.num}</span>
                 </div>
               </div>

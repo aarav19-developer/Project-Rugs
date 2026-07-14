@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
 import PageMeta from '../Components/PageMeta'
+import ImageSlider from '../Components/ImageSlider'
 
 const STATS = [
   { num: '30+',  label: 'Years in Business'     },
@@ -10,17 +11,26 @@ const STATS = [
 ]
 
 const TIMELINE = [
-  { year: '1990s', title: 'The Beginning', desc: 'Deen Dayal Rugs Export was founded as a small family weaving workshop in Meerut, Uttar Pradesh, India — driven by a passion for traditional Indian carpet craftsmanship.' },
+  { year: '1990s', title: 'The Beginning', desc: 'Deen Dayal Rugs Exports was founded as a small family weaving workshop in Meerut, Uttar Pradesh, India — driven by a passion for traditional Indian carpet craftsmanship.' },
   { year: '2000s', title: 'Growing the Craft', desc: 'Expanded the artisan team and diversified into multiple carpet types — hand-knotted, hand-tufted, and flat weave — catering to domestic and early export buyers.' },
   { year: '2010s', title: 'Going Global', desc: 'Established direct export relationships with buyers in the USA, UK, Germany, UAE, and Australia. Achieved compliance with international quality and safety standards.' },
   { year: '2020s', title: 'Full Product Range', desc: 'Expanded beyond carpets into poufs, cushions, wall art, wall hangings, wooden stools, and benches — becoming a complete handmade and machine-made lifestyle product exporter.' },
 ]
 
 const TEAM = [
-  { name: 'Founder & Director',    role: 'Operations & Vision',     img: '/founder.png' },
-  { name: 'Export Manager',        role: 'International Relations',  img: '/export-manager.png' },
-  { name: 'Head of Design',        role: 'Product Development',      img: null },
-  { name: 'Quality Control Lead',  role: 'Standards & Compliance',   img: null },
+  { name: 'Founder & Director',   role: 'Operations & Vision',    img: '/Team/founder.png' },
+  { name: 'Export Manager',       role: 'International Relations', img: '/Team/export-manager.png' },
+  { name: 'Head of Design',       role: 'Product Development',     img: '/Team/head-of-design.png' },
+  { name: 'Quality Control Lead', role: 'Standards & Compliance',  img: '/Team/quality-control-lead.png' },
+]
+
+/* About section — product/workshop images */
+const ABOUT_IMAGES = [
+  { src: '/Product/Carpet/c1.webp', alt: 'Handmade carpet Deen Dayal Rugs Exports' },
+  { src: '/Product/Carpet/c2.webp', alt: 'Premium carpet Meerut India' },
+  { src: '/Product/Poufs/p1.webp',  alt: 'Handcrafted pouf India' },
+  { src: '/Product/WallArt/wa1.webp', alt: 'Wall art exporter India' },
+  { src: '/Product/Cushion/cu1.webp', alt: 'Artisan cushion India' },
 ]
 
 const VALUES = [
@@ -34,15 +44,15 @@ export default function About() {
   return (
     <>
       <PageMeta
-        title="About Us — Carpet & Rug Exporter from Meerut India | Deen Dayal Rugs Export"
-        description="30+ years of carpet craftsmanship. Deen Dayal Rugs Export — a family-rooted exporter from Meerut, Uttar Pradesh, India. Handmade and machine-made products. Serving buyers in 20+ countries worldwide."
+        title="About Us — Carpet & Rug Exporter from Meerut India | Deen Dayal Rugs Exports"
+        description="30+ years of carpet craftsmanship. Deen Dayal Rugs Exports — a family-rooted exporter from Meerut, Uttar Pradesh, India. Handmade and machine-made products. Serving buyers in 20+ countries worldwide."
         canonical="https://www.deendayalrugs.com/about"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "AboutPage",
           "@id": "https://www.deendayalrugs.com/about#webpage",
           "url": "https://www.deendayalrugs.com/about",
-          "name": "About Deen Dayal Rugs Export — 30+ Years of Carpet Craftsmanship",
+          "name": "About Deen Dayal Rugs Exports — 30+ Years of Carpet Craftsmanship",
           "description": "Family-rooted carpet and rug exporter from Meerut, Uttar Pradesh, India. 30+ years of handmade and machine-made craftsmanship. ISO 9001 & ISO 14001 certified.",
           "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -56,7 +66,7 @@ export default function About() {
       <PageHero
         eyebrow="Our Story"
         title="A Legacy Woven Thread by Thread"
-        desc="Born in Meerut, grown worldwide — the story of Deen Dayal Rugs Export."
+        desc="Born in Meerut, grown worldwide — the story of Deen Dayal Rugs Exports."
         bg="#3E4D28"
       />
 
@@ -64,12 +74,13 @@ export default function About() {
       <section className="section-pad">
         <div className="container">
           <div className="about-grid">
-            <div className="reveal-left">
-              {/* TODO: Replace with actual artisan photo/animation */}
-              <div className="about-animation-placeholder">
-                <i className="fa-solid fa-hands" />
-                <p>Artisan at work</p>
-                <span>Replace with your video or animation</span>
+            <div className="reveal-left" style={{ position: 'relative' }}>
+              <div className="video-placeholder">
+                <div className="video-placeholder-icon">
+                  <i className="fa-solid fa-play" />
+                </div>
+                <p className="video-placeholder-title">Skilled Artisan at Work</p>
+                <span className="video-placeholder-note">📹 Add artisan weaving video here</span>
               </div>
               <div className="about-badge">
                 <span className="badge-num">30<sup>+</sup></span>
@@ -81,7 +92,7 @@ export default function About() {
               <p className="section-eyebrow">Who We Are</p>
               <h2 className="section-title">Rooted in Meerut,<br /><em>Trusted Worldwide</em></h2>
               <p>
-                Deen Dayal Rugs Export is a family-rooted export house born from the carpet
+                Deen Dayal Rugs Exports is a family-rooted export house born from the carpet
                 weaving heartland of <strong>Meerut, Uttar Pradesh, India</strong> — a region that has
                 shaped India's handmade carpet industry for centuries.
               </p>
@@ -175,7 +186,7 @@ export default function About() {
                 and regulatory requirements, while continuously improving its processes.
               </p>
               <p>
-                For Deen Dayal Rugs Export, this means every step of our production — from
+                For Deen Dayal Rugs Exports, this means every step of our production — from
                 raw material sourcing to final dispatch — follows documented, audited processes
                 designed to eliminate errors and ensure consistent product quality for our
                 international buyers.
@@ -201,7 +212,7 @@ export default function About() {
                 continually improve its environmental performance.
               </p>
               <p>
-                At Deen Dayal Rugs Export, this certification reflects our genuine commitment
+                At Deen Dayal Rugs Exports, this certification reflects our genuine commitment
                 to responsible manufacturing — using eco-friendly azo-free dyes, reducing
                 waste, managing water and energy consumption, and ensuring our products are
                 safe for both people and the planet.

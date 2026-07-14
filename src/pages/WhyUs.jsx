@@ -1,7 +1,20 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
 import { useEffect, useRef, useState } from 'react'
 import PageMeta from '../Components/PageMeta'
+import ImageSlider from '../Components/ImageSlider'
+
+const RELATION_IMAGES = [
+  { src: '/Relation/r1.webp', alt: 'Meeting clients at trade fair' },
+  { src: '/Relation/r2.webp', alt: 'Client visit to our showroom' },
+  { src: '/Relation/r3.webp', alt: 'International buyers at Deen Dayal Rugs Exports' },
+  { src: '/Relation/r4.webp', alt: 'Building long-term partnerships' },
+  { src: '/Relation/r5.webp', alt: 'Export collaboration with global buyers' },
+  { src: '/Relation/r6.webp', alt: 'Trade fair presence India' },
+  { src: '/Relation/r7.webp', alt: 'Global reach Deen Dayal Rugs Exports' },
+  { src: '/Relation/r8.webp', alt: 'Client relations Meerut India' },
+  { src: '/Relation/r9.webp', alt: 'International trade partnerships' },
+]
 
 const WHY_CARDS = [
   { icon: 'fa-solid fa-hand-sparkles',  title: 'Handmade & Machine-Made',     desc: 'We craft our products both by skilled artisan hands and precision machinery — the perfect blend of traditional character and consistent, scalable quality.' },
@@ -72,7 +85,7 @@ export default function WhyUs() {
   return (
     <>
       <PageMeta
-        title="Why Choose Deen Dayal Rugs Export — Trusted Indian Carpet Exporter"
+        title="Why Choose Deen Dayal Rugs Exports — Trusted Indian Carpet Exporter"
         description="Handmade and machine-made products. Export quality standards, custom sizing, eco-friendly materials, competitive factory pricing. Trusted by buyers in 20+ countries worldwide."
         canonical="https://www.deendayalrugs.com/why-us"
         jsonLd={{
@@ -80,8 +93,8 @@ export default function WhyUs() {
           "@type": "WebPage",
           "@id": "https://www.deendayalrugs.com/why-us#webpage",
           "url": "https://www.deendayalrugs.com/why-us",
-          "name": "Why Choose Deen Dayal Rugs Export — Trusted Indian Carpet Exporter",
-          "description": "12 reasons international buyers trust Deen Dayal Rugs Export — custom sizing, export quality standards, eco-friendly materials, direct factory pricing.",
+          "name": "Why Choose Deen Dayal Rugs Exports — Trusted Indian Carpet Exporter",
+          "description": "12 reasons international buyers trust Deen Dayal Rugs Exports — custom sizing, export quality standards, eco-friendly materials, direct factory pricing.",
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -168,6 +181,57 @@ export default function WhyUs() {
                   <strong>{t.name}</strong>
                   <span>{t.country}</span>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUR BOND WITH CLIENTS ── */}
+      <section className="section-pad bg-sand">
+        <div className="container">
+          <div className="section-header reveal-up">
+            <p className="section-eyebrow">Our Relationships</p>
+            <h2 className="section-title">Our Bond With<br /><em>Our Clients</em></h2>
+            <p className="section-desc">
+              Beyond products, we build lasting partnerships. These moments capture the trust,
+              warmth and collaboration that define our relationships with buyers worldwide.
+            </p>
+          </div>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(3, 1fr)',
+            gap: '20px',
+            width: '100%',
+          }}>
+            {RELATION_IMAGES.map((img, i) => (
+              <div
+                key={img.src}
+                className="reveal-up"
+                style={{
+                  aspectRatio: '1 / 1',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  boxShadow: '0 4px 20px rgba(60,40,20,0.10)',
+                  border: '1px solid rgba(0,0,0,0.06)',
+                  background: 'var(--beige-dark)',
+                  transitionDelay: `${(i % 3) * 0.08}s`,
+                }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading="lazy"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'contain',
+                    objectPosition: 'center center',
+                    display: 'block',
+                    transition: 'transform 0.4s ease',
+                    background: 'var(--beige-dark)',
+                  }}
+                />
               </div>
             ))}
           </div>

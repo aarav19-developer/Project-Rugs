@@ -1,14 +1,19 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
 import PageMeta from '../Components/PageMeta'
+import ImageSlider from '../Components/ImageSlider'
 
 const PRODUCTS = [
   {
     id: 'carpets',
     title: 'Carpets',
     badge: 'Customisation Available',
-    bg: '#A89070',
-    icon: 'fa-solid fa-grip',
+    images: [
+      { src: '/Product/Carpet/c1.webp', alt: 'Handmade carpet by Deen Dayal Rugs Exports' },
+      { src: '/Product/Carpet/c2.webp', alt: 'Hand-knotted carpet Meerut India' },
+      { src: '/Product/Carpet/c3.webp', alt: 'Premium wool carpet exporter India' },
+      { src: '/Product/Carpet/c4.webp', alt: 'Custom carpet manufacturer Meerut' },
+    ],
     shortDesc: 'Hand-knotted, hand-tufted, and flat weave — crafted to last lifetimes.',
     details: [
       'Hand-Knotted — individually tied knots for unmatched density and durability',
@@ -22,8 +27,11 @@ const PRODUCTS = [
     id: 'poufs',
     title: 'Poufs',
     badge: null,
-    bg: '#8B7355',
-    icon: 'fa-solid fa-circle',
+    images: [
+      { src: '/Product/Poufs/p1.webp', alt: 'Handcrafted pouf Deen Dayal Rugs Exports' },
+      { src: '/Product/Poufs/p2.webp', alt: 'Wool pouf exporter India' },
+      { src: '/Product/Poufs/p3.webp', alt: 'Jute pouf manufacturer Meerut' },
+    ],
     shortDesc: 'Handcrafted wool and jute poufs — perfect as footrests or accent seating.',
     details: [
       'Round, square and custom shapes available',
@@ -37,8 +45,12 @@ const PRODUCTS = [
     id: 'cushions',
     title: 'Cushions',
     badge: null,
-    bg: '#C4A882',
-    icon: 'fa-solid fa-square',
+    images: [
+      { src: '/Product/Cushion/cu1.webp', alt: 'Handwoven cushion cover Deen Dayal Rugs Exports' },
+      { src: '/Product/Cushion/cu2.webp', alt: 'Artisan cushion manufacturer India' },
+      { src: '/Product/Cushion/cu3.webp', alt: 'Wool cushion exporter Meerut' },
+      { src: '/Product/Cushion/cu4.webp', alt: 'Traditional weave cushion cover India' },
+    ],
     shortDesc: 'Artisan-made cushion covers with traditional weave patterns and earthy tones.',
     details: [
       'Hand-woven and hand-tufted cushion covers',
@@ -52,8 +64,11 @@ const PRODUCTS = [
     id: 'wall-art',
     title: 'Wall Art',
     badge: null,
-    bg: '#7A6B55',
-    icon: 'fa-solid fa-image',
+    images: [
+      { src: '/Product/WallArt/wa1.webp', alt: 'Handwoven wall art Deen Dayal Rugs Exports' },
+      { src: '/Product/WallArt/wa2.webp', alt: 'Textile wall art exporter India' },
+      { src: '/Product/WallArt/wa3.webp', alt: 'Artisan wall art manufacturer Meerut' },
+    ],
     shortDesc: 'Statement hand-woven wall pieces — unique artworks that transform any interior.',
     details: [
       'Hand-woven textile wall art in natural fibres',
@@ -67,8 +82,12 @@ const PRODUCTS = [
     id: 'wall-hanging',
     title: 'Wall Hangings',
     badge: null,
-    bg: '#B8A898',
-    icon: 'fa-solid fa-panorama',
+    images: [
+      { src: '/Product/WallHanging/wh1.webp', alt: 'Handmade wall hanging Deen Dayal Rugs Exports' },
+      { src: '/Product/WallHanging/wh2.webp', alt: 'Bohemian wall hanging exporter India' },
+      { src: '/Product/WallHanging/wh3.webp', alt: 'Traditional wall hanging Meerut' },
+      { src: '/Product/WallHanging/wh4.webp', alt: 'Wool cotton wall hanging manufacturer India' },
+    ],
     shortDesc: 'Bohemian and traditional wall hangings crafted with wool, cotton, and natural fibres.',
     details: [
       'Hand-woven macramé and tapestry styles',
@@ -82,8 +101,11 @@ const PRODUCTS = [
     id: 'stool-wood',
     title: 'Wooden Stools',
     badge: null,
-    bg: '#6B5A3E',
-    icon: 'fa-solid fa-chair',
+    images: [
+      { src: '/Product/WoodenStool/ws1.webp', alt: 'Handcrafted wooden stool Deen Dayal Rugs Exports' },
+      { src: '/Product/WoodenStool/ws2.webp', alt: 'Sheesham wood stool exporter India' },
+      { src: '/Product/WoodenStool/ws3.webp', alt: 'Tufted wooden stool manufacturer Meerut' },
+    ],
     shortDesc: 'Solid wood stools with hand-woven or hand-tufted upholstered tops.',
     details: [
       'Eucalyptus, sheesham and teak wood frames',
@@ -97,8 +119,11 @@ const PRODUCTS = [
     id: 'benches',
     title: 'Benches',
     badge: null,
-    bg: '#6B7C4A',
-    icon: 'fa-solid fa-couch',
+    images: [
+      { src: '/Product/Benches/b1.jpeg', alt: 'Handcrafted bench Deen Dayal Rugs Exports', pos: 'center center', fit: 'contain' },
+      { src: '/Product/Benches/b2.jpeg', alt: 'Wooden bench exporter India', pos: 'center center', fit: 'contain' },
+      { src: '/Product/Benches/b3.jpeg', alt: 'Upholstered bench manufacturer Meerut', pos: 'center center', fit: 'contain' },
+    ],
     shortDesc: 'Handcrafted wooden benches with fabric-upholstered seats — ideal for any interior.',
     details: [
       'Eucalyptus, sheesham and teak wood construction',
@@ -114,7 +139,7 @@ export default function Products() {
   return (
     <>
       <PageMeta
-        title="Carpets, Rugs & Home Textiles | Deen Dayal Rugs Export India"
+        title="Carpets, Rugs & Home Textiles | Deen Dayal Rugs Exports India"
         description="Explore our range — hand-knotted carpets, hand-tufted rugs, machine-made carpets, poufs, cushions, wall art, wall hangings, wooden stools and benches. Made in Meerut, Uttar Pradesh, India."
         canonical="https://www.deendayalrugs.com/products"
         jsonLd={{
@@ -122,7 +147,7 @@ export default function Products() {
           "@type": "WebPage",
           "@id": "https://www.deendayalrugs.com/products#webpage",
           "url": "https://www.deendayalrugs.com/products",
-          "name": "Carpets, Rugs & Home Textiles | Deen Dayal Rugs Export India",
+          "name": "Carpets, Rugs & Home Textiles | Deen Dayal Rugs Exports India",
           "description": "Hand-knotted carpets, hand-tufted rugs, machine-made carpets, poufs, cushions, wall art, wall hangings, wooden stools and benches. Made in Meerut, Uttar Pradesh, India.",
           "breadcrumb": {
             "@type": "BreadcrumbList",
@@ -166,14 +191,18 @@ export default function Products() {
           <div className="container">
             <div className={`product-page-grid${i % 2 !== 0 ? ' reverse' : ''}`}>
 
-              {/* Image / Placeholder */}
+              {/* Image Slider */}
               <div className={i % 2 !== 0 ? 'reveal-right' : 'reveal-left'}>
-                <div className="product-page-img" style={{ background: p.bg }}>
-                  <i className={p.icon} />
-                  {/* TODO: Replace with <img src={`/images/products/${p.id}.jpg`} alt={p.title} /> */}
-                  <span>Add your product image here</span>
+                <div className="product-page-img-wrap">
+                  <ImageSlider
+                    images={p.images}
+                    height="480px"
+                    autoPlay={3500}
+                    objectPos="center"
+                    borderRadius="var(--radius-xl)"
+                  />
+                  {p.badge && <div className="product-page-badge">{p.badge}</div>}
                 </div>
-                {p.badge && <div className="product-page-badge">{p.badge}</div>}
               </div>
 
               {/* Text */}

@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Block irrelevant paths (none exist yet, but good practice)
+Disallow: /api/
+Disallow: /*.json$
+
+# Allow major crawlers explicitly
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.deendayalrugs.com/sitemap.xml

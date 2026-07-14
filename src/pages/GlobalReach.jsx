@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+﻿import { Link } from 'react-router-dom'
 import PageHero from '../Components/PageHero'
 import PageMeta from '../Components/PageMeta'
 import {
@@ -45,7 +45,7 @@ export default function GlobalReach() {
   return (
     <>
       <PageMeta
-        title="Global Carpet Export Destinations — Deen Dayal Rugs Export India"
+        title="Global Carpet Export Destinations — Deen Dayal Rugs Exports India"
         description="Exporting handmade and machine-made carpets and rugs from Meerut, Uttar Pradesh, India to USA, UK, Germany, UAE, Australia and 20+ countries. Full export documentation and worldwide shipping."
         canonical="https://www.deendayalrugs.com/global-reach"
         jsonLd={{
@@ -53,7 +53,7 @@ export default function GlobalReach() {
           "@type": "WebPage",
           "@id": "https://www.deendayalrugs.com/global-reach#webpage",
           "url": "https://www.deendayalrugs.com/global-reach",
-          "name": "Global Carpet Export Destinations — Deen Dayal Rugs Export India",
+          "name": "Global Carpet Export Destinations — Deen Dayal Rugs Exports India",
           "description": "Exporting handmade carpets and rugs from Meerut, Uttar Pradesh, India to USA, UK, Germany, UAE, Australia and 20+ countries worldwide.",
           "breadcrumb": {
             "@type": "BreadcrumbList",

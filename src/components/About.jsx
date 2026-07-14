@@ -1,4 +1,4 @@
-import '../style/About.css'
+﻿import '../style/About.css'
 
 /* ============================================================
    DUMMY DATA — replace with real values when available
@@ -44,7 +44,7 @@ export default function About() {
                 /* TODO: Replace src with actual artisan image */
                 <img
                   src={ARTISAN_IMAGE}
-                  alt="Skilled artisan hand-knotting a carpet at Deen Dayal Rugs Export workshop in Meerut, Uttar Pradesh, India"
+                  alt="Skilled artisan hand-knotting a carpet at Deen Dayal Rugs Exports workshop in Meerut, Uttar Pradesh, India"
                   loading="lazy"
                   width="600"
                   height="720"
@@ -65,7 +65,7 @@ export default function About() {
               A Legacy Woven<br /><em>Thread by Thread</em>
             </h2>
             <p>
-              Deen Dayal Rugs Export is a family-rooted export house born from the carpet
+              Deen Dayal Rugs Exports is a family-rooted export house born from the carpet
               weaving heartland of <strong>Meerut, Uttar Pradesh, India</strong> — a region that has
               shaped India's handmade carpet industry for centuries. What began as a small
               workshop driven by a passion for traditional craftsmanship has grown into a

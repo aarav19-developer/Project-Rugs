@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+﻿import { useState, useRef } from 'react'
 import PageHero from '../Components/PageHero'
 import PageMeta from '../Components/PageMeta'
 
@@ -67,8 +67,8 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
           access_key: '639d1f43-d34b-41e7-9219-56411e5e3559',
-          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Export`,
-          from_name: 'Deen Dayal Rugs Export',
+          subject: `New Enquiry from ${form.fullName} — Deen Dayal Rugs Exports`,
+          from_name: 'Deen Dayal Rugs Exports',
           email: form.email,
           phone: form.phone,
           country: form.country,
@@ -77,8 +77,8 @@ export default function Contact() {
           // Auto-reply to client
           replyto: form.email,
           autoresponse: true,
-          autoresponse_subject: 'Thank you for your enquiry — Deen Dayal Rugs Export',
-          autoresponse_message: `Dear ${form.fullName},\n\nThank you for reaching out to Deen Dayal Rugs Export.\n\nWe have received your enquiry regarding "${form.productInterest}" and our export team will get back to you within 24 hours.\n\nIf you need immediate assistance, feel free to WhatsApp us at +91 96271 11136.\n\nWarm regards,\nDeen Dayal Rugs Export\nMeerut, Uttar Pradesh, India\nwww.deendayalrugs.com`,
+          autoresponse_subject: 'Thank you for your enquiry — Deen Dayal Rugs Exports',
+          autoresponse_message: `Dear ${form.fullName},\n\nThank you for reaching out to Deen Dayal Rugs Exports.\n\nWe have received your enquiry regarding "${form.productInterest}" and our export team will get back to you within 24 hours.\n\nIf you need immediate assistance, feel free to WhatsApp us at +91 96271 11136.\n\nWarm regards,\nDeen Dayal Rugs Exports\nMeerut, Uttar Pradesh, India\nwww.deendayalrugs.com`,
         }),
       })
       const data = await res.json()
@@ -99,16 +99,16 @@ export default function Contact() {
   return (
     <>
       <PageMeta
-        title="Contact Us — Request a Quote or Sample | Deen Dayal Rugs Export"
-        description="Send an enquiry to Deen Dayal Rugs Export in Meerut, Uttar Pradesh, India. Request product samples, custom carpet pricing, FOB/CIF quotes. We respond within 24 hours."
+        title="Contact Us — Request a Quote or Sample | Deen Dayal Rugs Exports"
+        description="Send an enquiry to Deen Dayal Rugs Exports in Meerut, Uttar Pradesh, India. Request product samples, custom carpet pricing, FOB/CIF quotes. We respond within 24 hours."
         canonical="https://www.deendayalrugs.com/contact"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
           "@id": "https://www.deendayalrugs.com/contact#webpage",
           "url": "https://www.deendayalrugs.com/contact",
-          "name": "Contact Deen Dayal Rugs Export — Request a Quote or Sample",
-          "description": "Request carpet samples, custom pricing, FOB/CIF quotes from Deen Dayal Rugs Export, Meerut, Uttar Pradesh, India. Response within 24 hours.",
+          "name": "Contact Deen Dayal Rugs Exports — Request a Quote or Sample",
+          "description": "Request carpet samples, custom pricing, FOB/CIF quotes from Deen Dayal Rugs Exports, Meerut, Uttar Pradesh, India. Response within 24 hours.",
           "breadcrumb": {
             "@type": "BreadcrumbList",
             "itemListElement": [
@@ -270,7 +270,7 @@ export default function Contact() {
             {/* ── MAP ── */}
             <div className="map-embed-wrapper">
               <iframe
-                title="Deen Dayal Rugs Export — Plot No. 158, Sector 3, Shatabdi Nagar, Partapur Industrial Area, Meerut"
+                title="Deen Dayal Rugs Exports — Plot No. 158, Sector 3, Shatabdi Nagar, Partapur Industrial Area, Meerut"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.146!2d77.7877!3d28.9823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390c6573a8e9b8e7%3A0x1!2sPartapur+Industrial+Area%2C+Meerut%2C+Uttar+Pradesh+250103%2C+India!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
                 width="100%"
                 height="100%"
@@ -278,7 +278,7 @@ export default function Contact() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                aria-label="Google Map showing Deen Dayal Rugs Export location — Partapur Industrial Area, Meerut, Uttar Pradesh, India"
+                aria-label="Google Map showing Deen Dayal Rugs Exports location — Partapur Industrial Area, Meerut, Uttar Pradesh, India"
               />
             </div>
 
@@ -287,7 +287,7 @@ export default function Contact() {
               <div className="map-side-icon">
                 <i className="fa-solid fa-location-dot" />
               </div>
-              <h3>Deen Dayal Rugs Export</h3>
+              <h3>Deen Dayal Rugs Exports</h3>
               <p>
                 Plot No. 158, Sector 3,<br />
                 Shatabdi Nagar, Partapur Industrial Area,<br />
@@ -309,7 +309,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-get-directions"
-                aria-label="Get directions to Deen Dayal Rugs Export on Google Maps"
+                aria-label="Get directions to Deen Dayal Rugs Exports on Google Maps"
               >
                 <i className="fa-solid fa-diamond-turn-right" />
                 Get Directions

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+﻿import { useState, useEffect, useRef } from 'react'
 import { NavLink, Link }               from 'react-router-dom'
 import '../style/Navbar.css'
 
@@ -62,7 +62,7 @@ export default function Navbar() {
           <div className="nav-logo-img-wrap">
             <img
               src="/logo.png"
-              alt="Deen Dayal Rugs Export logo"
+              alt="Deen Dayal Rugs Exports logo"
               className="logo-img-only"
               width="48"
               height="48"
