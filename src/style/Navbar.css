@@ -226,6 +226,14 @@
   .nav-links { gap: 1.2rem; }
 }
 
+/* ── MOBILE OVERLAY — click outside to close ── */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 997;
+  background: rgba(0,0,0,0.4);
+}
+
 @media (max-width: 768px) {
   .hamburger { display: flex; }
   .btn-quote  { display: none; }
@@ -234,10 +242,12 @@
     position: fixed;
     top: 0; right: -100%; width: 280px; height: 100vh;
     background: var(--brown-dark);
-    flex-direction: column; justify-content: center;
-    gap: 2rem; padding: 2rem;
+    flex-direction: column; justify-content: flex-start;
+    padding-top: 80px;
+    gap: 0;
     transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
     z-index: 998;
+    overflow-y: auto;
   }
 
   .nav-links.open {
@@ -245,7 +255,14 @@
     box-shadow: -10px 0 40px rgba(0,0,0,0.4);
   }
 
-  .nav-links a { font-size: 1.1rem; color: rgba(255,255,255,0.8); letter-spacing: 0.12em; }
+  .nav-links > a,
+  .nav-links .nav-dropdown-wrap {
+    width: 100%;
+    padding: 14px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .nav-links a { font-size: 1rem; color: rgba(255,255,255,0.8); letter-spacing: 0.1em; }
   .navbar.scrolled .nav-links a { color: rgba(255,255,255,0.8); }
 }
 
@@ -424,19 +441,18 @@
 
 /* ── MOBILE sub-menu accordion ── */
 .mobile-sub-menu {
-  display: none; /* only shown on mobile */
+  display: none;
   flex-direction: column;
   gap: 0;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
-  background: rgba(255,255,255,0.05);
-  border-radius: 8px;
-  margin-top: 4px;
+  background: rgba(0,0,0,0.2);
+  margin: 0 -24px;
 }
 
 .mobile-sub-menu.open {
-  max-height: 500px;
+  max-height: 400px;
 }
 
 .mobile-sub-item {

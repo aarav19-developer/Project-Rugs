@@ -7,6 +7,7 @@ import ImageSlider from '../Components/ImageSlider'
 /* Hero images */
 const HERO_IMAGES = [
   { src: '/HeroSection/h1.webp', alt: 'Handmade carpets by Deen Dayal Rugs Exports' },
+  { src: '/HeroSection/h2.webp', alt: 'Premium rugs crafted in Meerut, India' },
 ]
 
 /* Quick-preview cards shown on the Home page */
@@ -97,17 +98,28 @@ export default function Home() {
       {/* ── HERO ── */}
       <section className="hero" id="home">
         <div className="hero-bg">
-          <div className="hero-slides">
-            {HERO_IMAGES.map((img, i) => (
+          {HERO_IMAGES.map((img, i) => (
+            <div
+              key={img.src}
+              className={`hero-slide${i === heroIdx ? ' hero-slide-active' : ''}`}
+            >
+              {/* Blurred background fill */}
               <img
-                key={img.src}
                 src={img.src}
-                alt={img.alt}
-                className={`hero-slide-img${i === heroIdx ? ' hero-slide-active' : ''}`}
+                alt=""
+                aria-hidden="true"
+                className="hero-slide-blur"
                 loading={i === 0 ? 'eager' : 'lazy'}
               />
-            ))}
-          </div>
+              {/* Main image — fully visible, no crop */}
+              <img
+                src={img.src}
+                alt={img.alt}
+                className="hero-slide-img"
+                loading={i === 0 ? 'eager' : 'lazy'}
+              />
+            </div>
+          ))}
           <div className="hero-overlay" />
         </div>
 

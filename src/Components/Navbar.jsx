@@ -46,6 +46,28 @@ export default function Navbar() {
     return () => document.removeEventListener('mousedown', handler)
   }, [])
 
+  // FIX: Close mobile menu when clicking outside (on overlay)
+  useEffect(() => {
+    if (!menuOpen) return
+    const handler = (e) => {
+      // If click is outside nav-links panel, close menu
+      const navLinks = document.querySelector('.nav-links')
+      const hamburger = document.querySelector('.hamburger')
+      if (
+        navLinks && !navLinks.contains(e.target) &&
+        hamburger && !hamburger.contains(e.target)
+      ) {
+        close()
+      }
+    }
+    document.addEventListener('mousedown', handler)
+    document.addEventListener('touchstart', handler)
+    return () => {
+      document.removeEventListener('mousedown', handler)
+      document.removeEventListener('touchstart', handler)
+    }
+  }, [menuOpen])
+
   // Close everything when menu closes
   const close = () => {
     setMenuOpen(false)
@@ -55,9 +77,18 @@ export default function Navbar() {
 
   return (
     <header className={`navbar${scrolled ? ' scrolled' : ''}`}>
+      {/* FIX: Overlay behind mobile menu — click to close */}
+      {menuOpen && (
+        <div
+          className="nav-overlay"
+          onClick={close}
+          aria-hidden="true"
+        />
+      )}
+
       <div className="nav-container">
 
-        {/* Logo — icon image + brand text */}
+        {/* Logo */}
         <Link to="/" className="nav-logo" onClick={close}>
           <div className="nav-logo-img-wrap">
             <img
@@ -78,8 +109,6 @@ export default function Navbar() {
         <nav className={`nav-links${menuOpen ? ' open' : ''}`} aria-label="Main navigation">
           {NAV_LINKS.map((l) =>
             l.hasDropdown ? (
-
-              /* ── PRODUCTS — desktop hover dropdown + mobile tap accordion ── */
               <div
                 key={l.to}
                 className="nav-dropdown-wrap"
@@ -87,7 +116,6 @@ export default function Navbar() {
                 onMouseEnter={() => setDropOpen(true)}
                 onMouseLeave={() => setDropOpen(false)}
               >
-                {/* Desktop: clicking navigates to /products | Mobile: tap chevron toggles sub-menu */}
                 <span className="nav-dropdown-trigger-row">
                   <NavLink
                     to={l.to}
@@ -98,7 +126,7 @@ export default function Navbar() {
                     {l.label}
                   </NavLink>
 
-                  {/* Chevron button — only functional on mobile */}
+                  {/* Chevron — mobile only */}
                   <button
                     className={`nav-chevron-btn${mobileSubOpen ? ' open' : ''}`}
                     aria-label="Toggle product categories"
@@ -111,7 +139,7 @@ export default function Navbar() {
                   </button>
                 </span>
 
-                {/* ── DESKTOP dropdown panel ── */}
+                {/* Desktop dropdown */}
                 <div className={`nav-dropdown${dropOpen ? ' open' : ''}`} role="menu">
                   <div className="nav-dropdown-header">
                     <span>Our Product Categories</span>
@@ -135,7 +163,7 @@ export default function Navbar() {
                   </div>
                 </div>
 
-                {/* ── MOBILE accordion sub-menu ── */}
+                {/* FIX: Mobile accordion — shows INSIDE the menu panel */}
                 <div className={`mobile-sub-menu${mobileSubOpen ? ' open' : ''}`}>
                   {PRODUCT_CATEGORIES.map((cat) => (
                     <Link
