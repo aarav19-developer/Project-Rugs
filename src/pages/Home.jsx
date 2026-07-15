@@ -4,10 +4,10 @@ import MarqueeStrip from '../Components/MarqueeStrip'
 import PageMeta from '../Components/PageMeta'
 import ImageSlider from '../Components/ImageSlider'
 
-/* Hero images */
+/* Hero images — pos controls object-position per image */
 const HERO_IMAGES = [
-  { src: '/HeroSection/h1.webp', alt: 'Handmade carpets by Deen Dayal Rugs Exports' },
-  { src: '/HeroSection/h2.webp', alt: 'Premium rugs crafted in Meerut, India' },
+  { src: '/HeroSection/h1.webp', alt: 'Handmade carpets by Deen Dayal Rugs Exports', pos: 'center 25%' },
+  { src: '/HeroSection/h2.webp', alt: 'Premium rugs crafted in Meerut, India',        pos: '30% 15%'   },
 ]
 
 /* Quick-preview cards shown on the Home page */
@@ -116,6 +116,7 @@ export default function Home() {
                 src={img.src}
                 alt={img.alt}
                 className="hero-slide-img"
+                style={{ objectPosition: img.pos || 'center 20%' }}
                 loading={i === 0 ? 'eager' : 'lazy'}
               />
             </div>
