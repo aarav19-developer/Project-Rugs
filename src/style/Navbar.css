@@ -248,6 +248,7 @@
     transition: right 0.4s cubic-bezier(0.4,0,0.2,1);
     z-index: 998;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .nav-links.open {
@@ -260,6 +261,7 @@
     width: 100%;
     padding: 14px 24px;
     border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-sizing: border-box;
   }
 
   .nav-links a { font-size: 1rem; color: rgba(255,255,255,0.8); letter-spacing: 0.1em; }
@@ -282,6 +284,20 @@
   position: relative;
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .nav-dropdown-wrap {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+  
+  /* The trigger row should be full width on mobile */
+  .nav-dropdown-trigger-row {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 
 .nav-dropdown-trigger {
@@ -449,25 +465,28 @@
   transition: max-height 0.35s ease;
   background: rgba(0,0,0,0.2);
   margin: 0 -24px;
+  width: calc(100% + 48px);
 }
 
 .mobile-sub-menu.open {
-  max-height: 400px;
+  max-height: 500px;
 }
 
 .mobile-sub-item {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 16px;
+  padding: 11px 24px;
   font-size: 0.9rem;
-  color: rgba(255,255,255,0.7) !important;
+  color: rgba(255,255,255,0.75) !important;
   text-decoration: none;
   letter-spacing: 0.06em;
   text-transform: none;
   font-weight: 400;
   transition: all 0.25s ease;
   border-left: 2px solid transparent;
+  white-space: nowrap;
+  box-sizing: border-box;
 }
 
 .mobile-sub-item i {
@@ -477,19 +496,25 @@
   flex-shrink: 0;
 }
 
+.mobile-sub-item span {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .mobile-sub-item:hover,
 .mobile-sub-item:active {
   color: var(--cream) !important;
   background: rgba(255,255,255,0.08);
   border-left-color: var(--sand-dark);
-  padding-left: 20px;
 }
 
 .mobile-sub-all {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 10px 16px;
+  padding: 10px 24px;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -499,12 +524,12 @@
   border-top: 1px solid rgba(255,255,255,0.1);
   margin-top: 4px;
   transition: all 0.25s ease;
+  box-sizing: border-box;
 }
 
 .mobile-sub-all:hover,
 .mobile-sub-all:active {
   color: var(--sand-dark) !important;
-  padding-left: 20px;
 }
 
 /* ── MOBILE — show chevron button, show sub-menu ── */
